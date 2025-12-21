@@ -961,3 +961,382 @@ footer a:hover{ color:#fff; }
 @media (max-width:600px){
   .footer-grid{ grid-template-columns:1fr; }
 }
+
+
+/* =========================================================
+   Internship section (FINAL CLEAN BLOCK)
+   Keeps: text on top, 2 images side-by-side, 3-col pathways list
+   Scoped ONLY to .why-vgee--internship
+   ========================================================= */
+
+.why-vgee--internship .why-row--internship{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* Top disclaimer text */
+.why-vgee--internship .internship-toptext{
+  margin: 0;
+  max-width: 75ch;
+}
+
+/* Two images side-by-side (isolated from .why-media styles) */
+.why-vgee--internship .internship-gallery{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Image tile styling (matches your panel/tile vibe) */
+.why-vgee--internship .internship-photo{
+  margin: 0;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.why-vgee--internship .internship-photo img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Available Pathways spacing */
+.why-vgee--internship .internship-title{
+  margin: 10px 0 10px;
+}
+
+/* 3-column list (keeps your existing bullet style from .why-list li) */
+.why-vgee--internship .why-list--cols{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 10px 26px;
+  margin: 10px 0 16px;
+}
+
+.why-vgee--internship .why-list--cols li{
+  margin: 0;
+}
+
+/* Prevent the button stretching full width (if base .why-btn is block) */
+.why-vgee--internship .why-btn{
+  width: fit-content;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .why-vgee--internship .why-list--cols{
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+  .why-vgee--internship .internship-photo{
+    height: 230px;
+  }
+}
+
+@media (max-width: 700px){
+  .why-vgee--internship .internship-gallery{
+    grid-template-columns: 1fr;
+  }
+  .why-vgee--internship .why-list--cols{
+    grid-template-columns: 1fr;
+  }
+  .why-vgee--internship .internship-photo{
+    height: 220px;
+  }
+}
+
+
+
+
+
+/* ================================
+   CTA section (scoped + reuses why styles)
+   Paste BELOW your existing CSS
+   ================================ */
+
+.why-vgee--cta{
+  padding-top: 70px;   /* keeps flow consistent with other sections */
+  padding-bottom: 70px;
+}
+
+.why-vgee--cta .why-head{
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.why-head--center{
+  text-align: center;
+}
+
+/* Subtle centered spacing for CTA rhythm */
+.why-vgee--cta .small{
+  max-width: 70ch;
+  margin: 12px auto 0;
+}
+
+/* CTA button: keep your existing .why-btn look, just make it feel primary */
+.why-vgee--cta .why-btn--cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 14px 22px;
+  border-radius: 14px;
+}
+
+/* Optional: gentle glow on hover to match your bullet accent */
+.why-vgee--cta .why-btn--cta:hover{
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+  transform: translateY(-1px);
+}
+
+
+.why-vgee--cta{
+  background:
+    radial-gradient(
+      60% 40% at 50% 50%,
+      rgba(56,189,248,0.08),
+      transparent 70%
+    );
+}
+
+
+
+/* ================================
+   Testimonials (NEW CARD STYLE)
+   Replace previous testimonial CSS with this
+   ================================ */
+
+.vgee-testimonials{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.vgee-testimonials__grid{
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* Card base */
+.vgee-tcard{
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+  overflow: hidden;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 520px; /* keeps cards equal height */
+}
+
+/* Top portion */
+.vgee-tcard__top{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Pill tag like mockup */
+.vgee-tcard__tag{
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.2px;
+  color: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.18);
+}
+
+/* Title inside card */
+.vgee-tcard__title{
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: rgba(255,255,255,0.94);
+}
+
+/* Quote styling */
+.vgee-tcard__quote{
+  margin: 0;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.82);
+}
+
+/* Bottom (image tile + meta) */
+.vgee-tcard__bottom{
+  margin-top: auto; /* pushes to bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inner image tile (not full background) */
+.vgee-tcard__media{
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  height: 210px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.12);
+}
+
+.vgee-tcard__media img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Small arrow like mockup (top-right) */
+.vgee-tcard__arrow{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+}
+
+/* Meta */
+.vgee-tcard__meta{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vgee-tcard__name{
+  font-weight: 800;
+  color: rgba(255,255,255,0.92);
+  font-size: 1.05rem;
+}
+
+.vgee-tcard__role{
+  color: rgba(255,255,255,0.62);
+  font-size: 0.92rem;
+}
+
+/* Hover (subtle) */
+.vgee-tcard{
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.vgee-tcard:hover{
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,0.16);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.45);
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .vgee-testimonials__grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .vgee-tcard{
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 650px){
+  .vgee-testimonials__grid{
+    grid-template-columns: 1fr;
+  }
+  .vgee-tcard{
+    min-height: auto;
+  }
+  .vgee-tcard__media{
+    height: 200px;
+  }
+}
+
+
+
+
+
+/* ================================
+   Testimonial tweaks (drop-in)
+   - remove arrow
+   - overlay name/role on image
+   - narrower image (~70%)
+   ================================ */
+
+/* If any old arrows exist, hide them */
+.vgee-tcard__arrow{ display: none !important; }
+
+/* Narrower media tile */
+.vgee-tcard__media--narrow{
+  width: 70%;
+  margin: 0 auto;         /* center the image tile */
+}
+
+/* Ensure media is positioned for overlay */
+.vgee-tcard__media{
+  position: relative;
+}
+
+/* Bottom overlay strip on image (mockup-like) */
+.vgee-tcard__media-meta{
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 12px 12px;
+  border-radius: 14px;
+
+  /* "white panel with low opacity" feel */
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vgee-tcard__media-name{
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.92);
+}
+
+.vgee-tcard__media-role{
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.72);
+}
+
+/* On smaller screens, allow the image to be wider for better use of space */
+@media (max-width: 980px){
+  .vgee-tcard__media--narrow{
+    width: 85%;
+  }
+}
+
+@media (max-width: 650px){
+  .vgee-tcard__media--narrow{
+    width: 100%;
+  }
+}

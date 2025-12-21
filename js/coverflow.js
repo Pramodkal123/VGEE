@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("ccfTrack");
   const dotsWrap = document.getElementById("ccfDots");
@@ -53,6 +52,19 @@ document.addEventListener("DOMContentLoaded", () => {
       d.classList.toggle("is-active", i === active);
     });
 
+
+
+
+
+    // active card class (for hover hint)
+    cards.forEach((card, i) => {
+      card.classList.toggle("is-active", i === active);
+    });
+
+
+
+
+
     // coverflow transforms
     cards.forEach((card, i) => {
       let offset = i - active;
@@ -65,9 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // --- TUNING (you can adjust later) ---
       const x = offset * 220;
-     const scale = offset === 0 ? 1.08 : Math.max(0.82, 1 - abs * 0.11);
-
-
+      const scale = offset === 0 ? 1.08 : Math.max(0.82, 1 - abs * 0.11);
       const rotate = offset === 0 ? 0 : offset * -14;
       const z = offset === 0 ? 260 : 140 - abs * 45;
       // ------------------------------------
@@ -91,9 +101,26 @@ document.addEventListener("DOMContentLoaded", () => {
     render();
   }
 
-  // click on card activates
+  // --- ACTIVE CARD REDIRECT (base URL + per-card hash) ---
+  // Add data-hash="#section" to each .ccf__card in your HTML
+const BASE_URL = new URL("programs.html", window.location.href).toString();
+
+
+
+  function redirectActiveCard() {
+    const c = cards[active];
+    const hash = c.dataset.hash || "";
+    if (!hash) return;
+    window.location.href = `${BASE_URL}${hash}`;
+  }
+
+  // click on card activates OR redirects if already active
   cards.forEach((card, i) => {
     card.addEventListener("click", () => {
+      if (i === active) {
+        redirectActiveCard();
+        return;
+      }
       active = i;
       render();
     });
@@ -109,5 +136,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buildDots();
   render();
-});
 
+  // --- AUTO PLAY ---
+  const AUTO_DELAY = 2000; // 2 seconds (change if needed)
+  let autoTimer = null;
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoTimer = setInterval(() => {
+      go(1);
+    }, AUTO_DELAY);
+  }
+
+  function stopAutoPlay() {
+    if (autoTimer) clearInterval(autoTimer);
+  }
+
+  // pause on hover
+  track.addEventListener("mouseenter", stopAutoPlay);
+  track.addEventListener("mouseleave", startAutoPlay);
+
+  // restart autoplay after manual interaction
+  prevBtn.addEventListener("click", startAutoPlay);
+  nextBtn.addEventListener("click", startAutoPlay);
+  dotsWrap.addEventListener("click", startAutoPlay);
+
+  startAutoPlay();
+});
