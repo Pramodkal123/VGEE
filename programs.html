@@ -3,30 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Programs — VGEE</title>
-  <meta name="description" content="Diploma, vocational and pathway programs to study and train in Italy for Asian applicants." />
-<!-- Favicon -->
+  <title>VGEE - Programmes</title>
+  <meta name="description" content="VGEE Programmes: skill development training, internship pathways, country-specific opportunities, eligibility criteria and application guidelines." />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16">
   <link rel="icon" type="image/png" href="assets/icons/favicon.ico">
-
-  <!-- Apple logo (iPhone/iPad home screen) -->
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-
-  <!-- (Optional) Manifest for PWA metadata -->
-  <link rel="manifest" href="assets/icons/site.webmanifest">  
+  <link rel="manifest" href="assets/icons/site.webmanifest">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
- <header>
+
+<header>
   <div class="container nav">
-    <div class="brand">
+    <a href="index.html" class="brand" aria-label="Go to homepage">
       <img src="assets/icons/logo.svg" alt="VGEE Logo" />
       <div>
         <div style="font-weight:800">VGEE</div>
         <small class="small">Vertec Global Education &amp; Employment</small>
       </div>
-    </div>
+    </a>
 
     <nav aria-label="Primary">
       <ul>
@@ -42,7 +41,7 @@
     </nav>
 
     <div class="lang-switch">
-      <a href="/it/">IT</a> | <a href="/si/">SI</a> | <a href="/ta/">TA</a>
+      <a href="it/programs.html">IT</a> | <a href="si/programs.html">SI</a> | <a href="ta/programs.html">TA</a>
       <button class="mobile-toggle" aria-label="Open menu">☰</button>
     </div>
   </div>
@@ -57,7 +56,7 @@
       <nav style="margin-top:12px">
         <ul style="list-style:none;padding-left:0">
           <li style="padding:8px 0"><a href="index.html">Home</a></li>
-          <li style="padding:8px 0"><a href="programs.html">Programs</a></li>
+          <li style="padding:8px 0"><a class="active" href="programs.html">Programs</a></li>
           <li style="padding:8px 0"><a href="training.html">Training</a></li>
           <li style="padding:8px 0"><a href="internships.html">Internships</a></li>
           <li style="padding:8px 0"><a href="services.html">Italy Services</a></li>
@@ -70,31 +69,281 @@
   </div>
 </header>
 
+<main>
 
-  <main class="container">
-    <section>
-      <h1>Our Programs</h1>
-      <p class="small">VGEE offers diploma, vocational and one-year pathway programs designed to prepare candidates for study, internships and careers in Italy.</p>
+  <!-- HERO / OVERVIEW -->
+  <section class="why-vgee vgee-programs-hero" id="overview">
+    <div class="container">
+      <div class="why-head">
+        <h1 class="vgee-programs-title">Programmes</h1>
+        <p class="small vgee-programs-sub">
+          VGEE offers globally recognized training programmes that equip Asian applicants with the skills and readiness
+          required for education, internship, and job-seeker visas in Europe.
+        </p>
 
-      <div class="grid">
-        <div class="card"><h3>Diploma & Vocational Programs</h3><p class="small">Hospitality, culinary, caregiving, IT, fashion, mechanical trades and business studies — with application and arrival support.</p></div>
-        <div class="card"><h3>One-Year Pathway Program</h3><p class="small">Intensive Italian language (A1–B1), vocational training and internship to improve employability in Italy.</p></div>
-        <div class="card"><h3>Pre-departure & In-country Training</h3><p class="small">Pre-departure modules and in-country orientation focused on Italian work culture and safety standards.</p></div>
+        <div class="vgee-programs-hero__cta">
+          <a href="contact.html#contact-form" class="why-btn">Schedule Free Consultation <span aria-hidden="true">→</span></a>
+          <a href="#eligibility" class="vgee-link">Check Eligibility</a>
+        </div>
+
+        <div class="vgee-programs-kpis">
+          <div class="vgee-kpi"><span class="vgee-kpi__tag">Training</span><span class="small">Industry-focused skills</span></div>
+          <div class="vgee-kpi"><span class="vgee-kpi__tag">Internships</span><span class="small">Learning-first pathways</span></div>
+          <div class="vgee-kpi"><span class="vgee-kpi__tag">Countries</span><span class="small">Europe-wide options</span></div>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- SKILL DEVELOPMENT PROGRAMMES -->
+  <section class="why-vgee vgee-programs-section" id="skill-programmes">
+    <div class="container">
+      <div class="why-head">
+        <h2>Skill Development Programmes</h2>
+        <p class="small">Choose from sector-aligned training pathways designed for real workplace readiness.</p>
+      </div>
+
+      <div class="vgee-panel vgee-panel--padded">
+        <ul class="why-list vgee-list-grid">
+          <li>Tourism &amp; Hospitality Management</li>
+          <li>Elderly Care &amp; Support Services</li>
+          <li>Professional Culinary Arts</li>
+          <li>Agriculture &amp; Farm Operations</li>
+          <li>Information Technology &amp; Digital Skills</li>
+          <li>Housekeeping &amp; Residential Services</li>
+          <li>Customer Care Services</li>
+          <li>Food Production &amp; Culinary Operations</li>
+          <li>Construction &amp; Skilled Trades</li>
+          <li>Manufacturing &amp; Industrial Operations</li>
+          <li>Domestic Worker Training (New)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL SKILL DEVELOPMENT -->
+  <section class="why-vgee vgee-programs-section" id="professional-skill-development">
+    <div class="container">
+      <div class="why-head">
+        <h2>Professional Skill Development</h2>
+        <p class="small">Practical skill-building that supports training outcomes and visa readiness.</p>
+      </div>
+
+      <div class="vgee-skillcards">
+        <article class="vgee-skillcard">
+          <div class="vgee-skillcard__icon">🧠</div>
+          <h3>Workplace Readiness</h3>
+          <p class="small">Professional expectations, punctuality, teamwork, and workplace culture.</p>
+        </article>
+
+        <article class="vgee-skillcard">
+          <div class="vgee-skillcard__icon">🗣️</div>
+          <h3>Communication Skills</h3>
+          <p class="small">Confidence in professional communication, service interactions, and reporting.</p>
+        </article>
+
+        <article class="vgee-skillcard">
+          <div class="vgee-skillcard__icon">📄</div>
+          <h3>Documentation Support</h3>
+          <p class="small">Guidance to prepare required documents and understand next steps.</p>
+        </article>
+
+        <article class="vgee-skillcard">
+          <div class="vgee-skillcard__icon">🌍</div>
+          <h3>Language Preparation</h3>
+          <p class="small">A1–B1 support depending on destination and programme requirements.</p>
+        </article>
+
+        <article class="vgee-skillcard">
+          <div class="vgee-skillcard__icon">🧰</div>
+          <h3>Practical Workshops</h3>
+          <p class="small">Hands-on training sessions aligned with your chosen sector.</p>
+        </article>
+
+        <article class="vgee-skillcard">
+          <div class="vgee-skillcard__icon">🎯</div>
+          <h3>Career Planning</h3>
+          <p class="small">Structured guidance to help you choose the right pathway and timeline.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNSHIP & PLACEMENT PATHWAYS -->
+  <section class="why-vgee vgee-programs-section" id="internship-pathways">
+    <div class="container">
+      <div class="why-head">
+        <h2>Internship &amp; Placement Pathways</h2>
+        <p class="small">Build real-world experience through guided internships with European host institutions — focused on learning, not employment.</p>
+      </div>
+
+      <div class="vgee-panel vgee-panel--padded">
+        <div class="vgee-split">
+          <div>
+            <ul class="why-list">
+              <li>Structured, supervised learning experience with host institutions.</li>
+              <li>International exposure and sector-aligned practice.</li>
+              <li>Clear guidance on process, documentation, and realistic expectations.</li>
+            </ul>
+            <p class="small vgee-note">
+              These pathways are education-driven training programmes — not job recruitment or placement.
+            </p>
+          </div>
+
+          <div class="vgee-placeholder">
+            <div class="vgee-placeholder__box">Image: Workshops / Training Centres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTRY-SPECIFIC OPPORTUNITIES -->
+  <section class="why-vgee vgee-programs-section" id="country-opportunities">
+    <div class="container">
+      <div class="why-head">
+        <h2>Country-Specific Opportunities</h2>
+        <p class="small">Programmes are mapped to destination requirements and realistic pathway outcomes.</p>
+      </div>
+
+      <div class="vgee-country-grid">
+        <article class="vgee-country-card">
+          <h3>Italy</h3>
+          <p class="small">Training with internship opportunities.</p>
+          <a class="vgee-link" href="internships.html">Explore Italy options →</a>
+        </article>
+
+        <article class="vgee-country-card">
+          <h3>Finland</h3>
+          <p class="small">Vocational Education &amp; Training (VET) pathway guidance.</p>
+          <a class="vgee-link" href="programs.html#contact">Learn more →</a>
+        </article>
+
+        <article class="vgee-country-card">
+          <h3>Germany</h3>
+          <p class="small">Preparation support for Ausbildung programmes.</p>
+          <a class="vgee-link" href="programs.html#contact">Learn more →</a>
+        </article>
+
+        <article class="vgee-country-card">
+          <h3>Malta</h3>
+          <p class="small">Professional hospitality internship placements.</p>
+          <a class="vgee-link" href="internships.html">Explore Malta options →</a>
+        </article>
+
+        <article class="vgee-country-card">
+          <h3>Austria</h3>
+          <p class="small">Caregiver &amp; domestic worker training pathways.</p>
+          <a class="vgee-link" href="programs.html#contact">Learn more →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIGIBILITY -->
+  <section class="why-vgee vgee-programs-section" id="eligibility">
+    <div class="container">
+      <div class="why-head">
+        <h2>Applicant Eligibility Criteria</h2>
+        <p class="small">Eligibility varies by destination country and pathway.</p>
+      </div>
+
+      <div class="vgee-panel vgee-panel--padded">
+        <ul class="why-list">
+          <li>Country-specific age eligibility</li>
+          <li>Minimum educational qualification</li>
+          <li>Proof of financial capacity</li>
+          <li>Language proficiency (A1–B1, depending on destination country)</li>
+        </ul>
+        <p class="small vgee-note">
+          Not sure where you fit? We’ll clarify the right pathway during a free consultation.
+        </p>
+        <a href="contact.html#contact-form" class="why-btn">Schedule Free Consultation <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION GUIDELINES -->
+  <section class="why-vgee vgee-programs-section" id="application-guidelines">
+    <div class="container">
+      <div class="why-head">
+        <h2>Application Guidelines</h2>
+        <p class="small">Detailed guidance through each stage — from registration to travel arrangements.</p>
+      </div>
+
+      <div class="vgee-panel vgee-panel--padded">
+        <ol class="vgee-steps">
+          <li>
+            <span class="vgee-step__num">1</span>
+            <div>
+              <strong>Registration</strong>
+              <div class="small">Submit your interest and confirm your preferred pathway.</div>
+            </div>
+          </li>
+          <li>
+            <span class="vgee-step__num">2</span>
+            <div>
+              <strong>Document Submissions</strong>
+              <div class="small">Prepare and submit required documents with guidance.</div>
+            </div>
+          </li>
+          <li>
+            <span class="vgee-step__num">3</span>
+            <div>
+              <strong>Training</strong>
+              <div class="small">Complete programme training and professional development sessions.</div>
+            </div>
+          </li>
+          <li>
+            <span class="vgee-step__num">4</span>
+            <div>
+              <strong>Visa Processing</strong>
+              <div class="small">Visa documentation support aligned to destination requirements.</div>
+            </div>
+          </li>
+          <li>
+            <span class="vgee-step__num">5</span>
+            <div>
+              <strong>Travel Arrangements</strong>
+              <div class="small">Final preparation and travel support for your transition.</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="why-vgee why-vgee--cta" id="contact">
+    <div class="container">
+      <div class="why-head why-head--center">
+        <h2>Start Your European Journey with an expert</h2>
+        <p class="small">
+          Get clear guidance on eligibility, pathways, and next steps — with no obligation.
+        </p>
+        <a href="contact.html#contact-form" class="why-btn why-btn--cta">
+          Schedule Your Free Consultation <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 
 <footer>
   <div class="container footer-grid">
     <div>
       <img src="assets/icons/logo.svg" alt="VGEE" style="height:42px;margin-bottom:8px" />
-      <p class="footer-note">Vertec Global Education &amp; Employment – bridging Asia and Italy through legal education and training.</p>
+      <p class="footer-note">
+        Vertec Global Education &amp; Employment – bridging Asia and Italy through legal education and training.
+      </p>
     </div>
 
     <div>
       <h4>Services</h4>
       <ul style="list-style:none;padding-left:0">
-        <li><a href="programs.html">Study & Training</a></li>
+        <li><a href="programs.html">Study &amp; Training</a></li>
         <li><a href="training.html">Skill Development</a></li>
         <li><a href="internships.html">Internships</a></li>
       </ul>
@@ -102,21 +351,30 @@
 
     <div>
       <h4>Legal</h4>
-      <p class="small">VGEE is not a foreign employment agency. We do not recruit workers from Asia to overseas jobs. Employment support is only provided inside Italy via registered Italian agencies.</p>
+      <p class="small">
+        VGEE is not a foreign employment agency. We do not recruit workers from Asia to overseas jobs.
+        Employment support is only provided inside Italy via registered Italian agencies.
+      </p>
     </div>
 
     <div>
       <h4>Contact</h4>
-      <p class="small">Email: <a href="mailto:info@your-domain.com">info@your-domain.com</a><br/>Phone: +39 XXX XXX XXXX</p>
+      <p class="small">
+        Email: <a href="mailto:info@your-domain.com">info@your-domain.com</a><br/>
+        Phone: +39 XXX XXX XXXX
+      </p>
     </div>
   </div>
 
   <div style="text-align:center;padding:12px;border-top:1px solid rgba(255,255,255,0.02);margin-top:18px">
-    <small class="small">© <span id="year"></span> Vertec Global Education &amp; Employment (VGEE)</small>
+    <small class="small">
+      © <span id="year"></span> Vertec Global Education &amp; Employment (VGEE)
+    </small>
   </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </footer>
-<script src="js/script.js"></script>
 
+<script src="js/script.js"></script>
+<script src="js/coverflow.js"></script>
 </body>
 </html>

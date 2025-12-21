@@ -1340,3 +1340,240 @@ footer a:hover{ color:#fff; }
     width: 100%;
   }
 }
+
+
+
+
+/* =========================================================
+   PROGRAMS PAGE DROP-IN CSS (FINAL)
+   Uses the site's existing .container for EXACT navbar alignment.
+   Replace the old Programs CSS block with this.
+   ========================================================= */
+
+/* HERO */
+.vgee-programs-title{
+  margin: 0;
+}
+
+.vgee-programs-sub{
+  max-width: 80ch;
+}
+
+/* CTA row */
+.vgee-programs-hero__cta{
+  margin-top: 18px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Inline link style */
+.vgee-link{
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding-bottom: 2px;
+}
+.vgee-link:hover{
+  color: rgba(255,255,255,0.92);
+  border-bottom-color: rgba(255,255,255,0.35);
+}
+
+/* KPI pills row */
+.vgee-programs-kpis{
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.vgee-kpi{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.vgee-kpi__tag{
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.18);
+}
+
+/* Section spacing (keeps same rhythm as home) */
+.vgee-programs-section{
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* Panel wrapper */
+.vgee-panel{
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+}
+
+.vgee-panel--padded{
+  padding: 18px;
+  margin-top: 18px;
+}
+
+/* Programmes list grid */
+.vgee-list-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 10px 26px;
+  margin: 0;
+}
+.vgee-list-grid li{ margin: 0; }
+
+/* Skill cards */
+.vgee-skillcards{
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.vgee-skillcard{
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.32);
+  padding: 18px;
+}
+
+.vgee-skillcard__icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+}
+
+.vgee-skillcard h3{ margin: 0 0 6px; }
+
+/* Split panel (internship) */
+.vgee-split{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.vgee-note{
+  margin-top: 12px;
+  color: rgba(255,255,255,0.62);
+}
+
+.vgee-placeholder__box{
+  height: 220px;
+  border-radius: 18px;
+  border: 1px dashed rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.12);
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem;
+}
+
+/* Country cards */
+.vgee-country-grid{
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.vgee-country-card{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.30);
+  padding: 16px;
+}
+
+.vgee-country-card h3{ margin: 0 0 6px; }
+.vgee-country-card .small{ margin: 0 0 10px; }
+
+/* Steps */
+.vgee-steps{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.vgee-steps li{
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 12px;
+  border-radius: 16px;
+  background: rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.vgee-step__num{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+/* CTA helper (centered) */
+.why-head--center{ text-align: center; }
+
+.why-vgee--cta .small{
+  max-width: 70ch;
+  margin: 12px auto 0;
+}
+
+.why-vgee--cta .why-btn--cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 14px 22px;
+  border-radius: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .vgee-country-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .vgee-programs-kpis{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 980px){
+  .vgee-list-grid{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+  .vgee-skillcards{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vgee-split{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 650px){
+  .vgee-list-grid{ grid-template-columns: 1fr; }
+  .vgee-skillcards{ grid-template-columns: 1fr; }
+  .vgee-country-grid{ grid-template-columns: 1fr; }
+}
