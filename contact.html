@@ -1,18 +1,159 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact — VGEE</title><meta name="description" content="Contact Vertec Global Education & Employment (VGEE).">
-<!-- Favicon -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — VGEE</title>
+  <meta name="description" content="Contact Vertec Global Education & Employment (VGEE)." />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
   <link rel="icon" type="image/png" href="assets/icons/favicon.ico">
-
-  <!-- Apple logo (iPhone/iPad home screen) -->
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="assets/icons/site.webmanifest">
 
-  <!-- (Optional) Manifest for PWA metadata -->
-  <link rel="manifest" href="assets/icons/site.webmanifest">  
-<link rel="stylesheet" href="css/style.css"></head>
-<body>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Page-local fixes ONLY for contact form usability -->
+  <style>
+    /* Keep it scoped so we don't disturb other pages */
+    .contact-page .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:18px;
+      margin-top:12px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .contact-page .contact-grid{ grid-template-columns: 1fr; }
+    }
+
+    .contact-page .contact-card{
+      position: relative; /* ensures z-index works */
+      z-index: 1;
+    }
+
+    .contact-page .form-row{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      margin-top:12px;
+    }
+
+    /* Force inputs to be interactive even if some global overlay exists */
+    .contact-page label{
+      position: relative;
+      z-index: 2;
+      display:inline-block;
+    }
+    .contact-page input,
+    .contact-page textarea,
+    .contact-page select,
+    .contact-page button{
+      position: relative;
+      z-index: 3;
+      pointer-events: auto;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    /* In case your global .form-input style is missing or overridden */
+    .contact-page .form-input{
+      width:100%;
+      box-sizing:border-box;
+    }
+
+    .contact-page .form-actions{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .contact-page .form-note{
+      margin-top:10px;
+      display:none;
+      padding:10px 12px;
+      border-radius:12px;
+    }
+    .contact-page .form-note--ok{ display:block; }
+
+
+
+/* Contact page – Office & Contact layout fix */
+#contact .contact-info{
+  padding: 6px; /* matches your current inner padding feel */
+}
+
+#contact .contact-info__grid{
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+#contact .contact-info__item{
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  column-gap: 10px;
+  row-gap: 4px;
+  align-items: start;
+}
+
+#contact .contact-info__item::before{
+  content:"";
+  width: 12px;
+  height: 12px;
+  margin-top: 4px;
+  border-radius: 999px;
+  border: 2px solid rgba(28, 255, 224, 0.8); /* uses your teal bullet vibe */
+  box-sizing: border-box;
+}
+
+#contact .contact-info__label{
+  grid-column: 2;
+  font-weight: 700;
+  opacity: 0.92;
+}
+
+#contact .contact-info__value{
+  grid-column: 2;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* prevent ugly email breaks */
+#contact .contact-info__link{
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+
+/* allow phone to wrap nicely if needed */
+#contact .contact-info__value a[href^="tel:"]{
+  white-space: nowrap;
+}
+
+#contact .contact-info__actions{
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#contact .contact-info__note{
+  margin-top: 12px;
+  opacity: 0.75;
+}
+
+
+
+
+  </style>
+</head>
+
+<body class="contact-page">
 <header>
   <div class="container nav">
     <div class="brand">
@@ -32,7 +173,7 @@
         <li><a href="services.html">Italy Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html" class="cta active">Contact</a></li>
+        <li><a href="contact.html" class="cta active" aria-current="page">Contact</a></li>
       </ul>
     </nav>
 
@@ -65,42 +206,198 @@
   </div>
 </header>
 
+<main class="container">
 
-  <main class="container">
-    <section>
+  <!-- Page intro -->
+  <section class="why-vgee" id="contact">
+    <div class="why-head">
       <h1>Contact Us</h1>
-      <p class="small">Ready to discuss partnership opportunities or our programs? Contact VGEE today.</p>
+      <p class="small">
+        Ready to discuss partnership opportunities or our programmes? Contact VGEE today.
+      </p>
+    </div>
 
-      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
-        <form class="card" id="contactForm" method="post" action="#">
-          <label>Full Name</label>
-          <input class="form-input" name="name" required />
+    <!-- This panel matches the 2nd image style (same structure as index "End-to-End Support") -->
+    <article class="why-row">
+      <!-- LEFT: Form (inside the dark panel) -->
+      <div class="why-content">
+        <h3>Send us a message</h3>
 
-          <label>Email</label>
-          <input class="form-input" type="email" name="email" required />
+        <form id="contactForm" autocomplete="on" novalidate>
 
-          <label>Phone / WhatsApp</label>
-          <input class="form-input" name="phone" />
-
-          <label>Message</label>
-          <textarea class="form-input" name="message" rows="5" required></textarea>
-
-          <div style="margin-top:10px">
-            <button class="btn" type="submit">Send Message</button>
+          <div class="form-row">
+            <label for="fullName">Full Name *</label>
+            <input
+              id="fullName"
+              class="form-input"
+              name="name"
+              type="text"
+              placeholder="Your full name"
+              autocomplete="name"
+              required
+            />
           </div>
-        </form>
 
-        <aside class="card">
-          <h3>Office & Contact</h3>
-          <p><strong>CEO:</strong> Ravi Egodavitharana</p>
-          <p><strong>Head Office:</strong> Pisa, Italy</p>
-          <p><strong>Regional Office:</strong> Colombo, Sri Lanka</p>
-          <p><strong>Email:</strong> <a href="mailto:info@your-domain.com">info@your-domain.com</a></p>
-          <p><strong>Phone:</strong> +39 XXX XXX XXXX</p>
-        </aside>
+          <div class="form-row">
+            <label for="email">Email *</label>
+            <input
+              id="email"
+              class="form-input"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone / WhatsApp</label>
+            <input
+              id="phone"
+              class="form-input"
+              name="phone"
+              type="tel"
+              placeholder="+94 7X XXX XXXX"
+              autocomplete="tel"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="topic">I’m interested in</label>
+            <select id="topic" class="form-input" name="topic">
+              <option value="General">General enquiry</option>
+              <option value="Training">Training</option>
+              <option value="Internships">Internships</option>
+              <option value="Study">Study programmes</option>
+              <option value="Partnership">Partnership</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message *</label>
+            <textarea
+              id="message"
+              class="form-input"
+              name="message"
+              rows="6"
+              placeholder="Tell us what you’re looking for..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="why-btn" type="submit">
+              Send Message <span aria-hidden="true">→</span>
+            </button>
+            <span class="small" style="opacity:.85">We’ll respond as soon as possible.</span>
+          </div>
+
+          <div id="formNote" class="small" style="margin-top:10px"></div>
+        </form>
       </div>
-    </section>
-  </main>
+
+      <!-- RIGHT: Contact info (keeps same panel styling) -->
+      <div class="why-media">
+  <div class="contact-info">
+    <h3 style="margin-top:0">Office &amp; Contact</h3>
+
+    <div class="contact-info__grid">
+      <div class="contact-info__item">
+        <div class="contact-info__label">Head Office</div>
+        <div class="contact-info__value">Pisa, Italy</div>
+      </div>
+
+      <div class="contact-info__item">
+        <div class="contact-info__label">Regional Office</div>
+        <div class="contact-info__value">Colombo, Sri Lanka</div>
+      </div>
+
+      <div class="contact-info__item">
+        <div class="contact-info__label">Email</div>
+        <div class="contact-info__value">
+          <a class="contact-info__link" href="mailto:info@your-domain.com">info@your-domain.com</a>
+        </div>
+      </div>
+
+      <div class="contact-info__item">
+        <div class="contact-info__label">Phone</div>
+        <div class="contact-info__value">
+          <a class="contact-info__link" href="tel:+39XXXXXXXXXX">+39 XXX XXX XXXX</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-info__actions">
+      <a class="why-btn" href="mailto:info@your-domain.com">Email Us <span aria-hidden="true">→</span></a>
+      <a class="why-btn" href="#contactForm" style="opacity:.9">Request a Call <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="small contact-info__note">
+      Mailing integration will be connected next. For now, this form is UI-ready and validated.
+    </div>
+  </div>
+</div>
+
+    </article>
+  </section>
+
+  <!-- Optional extra panel (if you want a second section like index) -->
+  <section class="why-vgee" id="quick-help" style="margin-top: 26px;">
+    <div class="why-head">
+      <h2>Need Quick Guidance?</h2>
+      <p class="small">Here are the most common things people ask us — choose one and we’ll guide you.</p>
+    </div>
+
+    <div class="why-zigzag">
+      <article class="why-row why-row--reverse">
+        <div class="why-media">
+          <img src="assets/images/contact-support.jpg" alt="Support and guidance" loading="lazy" style="max-width:100%;height:auto;display:block;border-radius:18px">
+        </div>
+        <div class="why-content">
+          <h3>End-to-End Support</h3>
+          <ul class="why-list">
+            <li>Admission support, visa assistance, accommodation, internship and local Italy support.</li>
+            <li>Help preparing documentation and next steps.</li>
+            <li>Ongoing guidance while you transition and settle in.</li>
+          </ul>
+          <a class="why-btn" href="programs.html">
+            Learn more <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Frontend-only submit handler (backend mailing later)
+  (function () {
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('formNote');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+      const message = form.querySelector('[name="message"]').value.trim();
+
+      if (!name || !email || !message) {
+        note.textContent = 'Please fill in Full Name, Email and Message.';
+        note.style.opacity = '0.9';
+        return;
+      }
+
+      note.textContent = 'Thanks! Your message is captured (mail sending will be connected next).';
+      note.style.opacity = '0.9';
+      form.reset();
+      document.getElementById('fullName').focus();
+    });
+  })();
+</script>
+
 
 <footer>
   <div class="container footer-grid">
@@ -134,7 +431,39 @@
   </div>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </footer>
-<script src="js/script.js"></script>
 
+<script>
+  // Frontend-only submit handler (backend mailing later)
+  (function () {
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('formNote');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Basic validation (no backend yet)
+      const name = form.querySelector('[name="name"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+      const message = form.querySelector('[name="message"]').value.trim();
+
+      if (!name || !email || !message) {
+        note.className = 'form-note card form-note--ok';
+        note.textContent = 'Please fill in Full Name, Email and Message.';
+        return;
+      }
+
+      note.className = 'form-note card form-note--ok';
+      note.textContent = 'Thanks! Your message is ready. (Mailing will be connected later.)';
+
+      // Optional: clear the form
+      form.reset();
+      form.querySelector('#fullName').focus();
+    });
+  })();
+</script>
+
+<script src="js/script.js"></script>
 </body>
 </html>

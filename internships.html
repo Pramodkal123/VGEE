@@ -1,31 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Internships — VGEE</title>
-<meta name="description" content="Internship programs in Italy arranged for enrolled trainees and students, compliant with Italian law.">
-<!-- Favicon -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Internships | VGEE - Vertec Global Education and Employment</title>
+  <meta name="description" content="Certified internship pathways designed for visa-aligned training and skill development in Europe. Not classified as employment." />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16">
   <link rel="icon" type="image/png" href="assets/icons/favicon.ico">
-
-  <!-- Apple logo (iPhone/iPad home screen) -->
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="assets/icons/site.webmanifest">
 
-  <!-- (Optional) Manifest for PWA metadata -->
-  <link rel="manifest" href="assets/icons/site.webmanifest">  
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
 <header>
   <div class="container nav">
-    <div class="brand">
+    <a href="index.html" class="brand" aria-label="Go to homepage">
       <img src="assets/icons/logo.svg" alt="VGEE Logo" />
       <div>
         <div style="font-weight:800">VGEE</div>
         <small class="small">Vertec Global Education &amp; Employment</small>
       </div>
-    </div>
+    </a>
 
     <nav aria-label="Primary">
       <ul>
@@ -41,7 +42,7 @@
     </nav>
 
     <div class="lang-switch">
-      <a href="/it/">IT</a> | <a href="/si/">SI</a> | <a href="/ta/">TA</a>
+      <a href="it/index.html">IT</a> | <a href="si/index.html">SI</a> | <a href="ta/index.html">TA</a>
       <button class="mobile-toggle" aria-label="Open menu">☰</button>
     </div>
   </div>
@@ -69,39 +70,381 @@
   </div>
 </header>
 
+<main class="container">
 
-  <main class="container">
-    <section>
-      <h1>Internship Programs</h1>
-      <p class="small">VGEE arranges internships for enrolled students and trainees. Internships provide hands-on experience, professional references and networking in Italy.</p>
+  <!-- HERO / WHAT IS INTERNSHIP -->
+  <section class="why-vgee vgee-intern-hero" id="overview">
+    <div class="why-head">
+      <h1 class="vgee-intern-title">Internships</h1>
+      <p class="small vgee-intern-sub">
+        An internship is a certified training programme designed to support visa applications and skill development.
+        It is not classified as employment, but as a structured learning experience.
+      </p>
 
-      <h3>Eligibility</h3>
-      <p class="small">Open to students and trainees enrolled in VGEE pathway programs who hold the appropriate visa/permit to undertake internships in Italy.</p>
-
-      <h3>Benefits</h3>
-      <ul>
-        <li>Real workplace experience</li>
-        <li>Industry contacts & references</li>
-        <li>Improved language and practical skills</li>
-      </ul>
-
-      <div class="highlight" style="margin-top:12px">
-        <strong>Important:</strong> VGEE does NOT act as an international employment recruiter. Internship and work opportunities are provided only in Italy and via appropriate, registered channels.
+      <div class="vgee-intern-hero__cta">
+        <a href="contact.html#contact-form" class="why-btn">
+          Schedule Free Consultation <span aria-hidden="true">→</span>
+        </a>
+        <a href="#industries" class="vgee-link">View Industries</a>
       </div>
-    </section>
-  </main>
+
+      <div class="vgee-intern-kpis">
+        <div class="vgee-kpi">
+          <span class="vgee-kpi__tag">Certified</span><span class="small">Learning-first pathway</span>
+        </div>
+        <div class="vgee-kpi">
+          <span class="vgee-kpi__tag">Visa-Aligned</span><span class="small">Structured programme</span>
+        </div>
+        <div class="vgee-kpi">
+          <span class="vgee-kpi__tag">EU Exposure</span><span class="small">Real-world practice</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- AVAILABLE INDUSTRIES (reuses internship pathways structure exactly) -->
+<section class="why-vgee why-vgee--internship" id="industries">
+  <div class="why-head">
+    <h2>Available Industries</h2>
+    <p class="small">
+      Our international training programmes and internships are offered across high-demand sectors –
+      aligned with European pathway expectations.
+    </p>
+  </div>
+
+  <div class="why-zigzag">
+    <article class="why-row why-row--internship">
+
+      <!-- Top text -->
+      <div class="internship-toptext">
+        <p class="small">
+          These programmes are education-driven pathways designed to build practical skills and
+          international readiness - not direct job placement or recruitment.
+        </p>
+      </div>
+
+      <!-- Two images (same gallery pattern) -->
+      <div class="internship-gallery">
+        <figure class="internship-photo">
+          <img
+            src="assets/images/internship-industries.jpg"
+            alt="Interns working across European industries"
+            loading="lazy"
+          >
+        </figure>
+
+        <figure class="internship-photo">
+          <img
+            src="assets/images/internship-industries-2.jpg"
+            alt="Training environments across European industries"
+            loading="lazy"
+          >
+        </figure>
+      </div>
+
+      <!-- Bottom content -->
+      <div class="internship-bottom">
+        <h3 class="internship-title">Industries Offered</h3>
+
+        <ul class="why-list why-list--cols">
+          <li>Tourism &amp; Hospitality Management</li>
+          <li>Elderly Care &amp; Support Services</li>
+          <li>Professional Culinary Arts</li>
+          <li>Agriculture &amp; Farm Operations</li>
+          <li>Information Technology &amp; Digital Skills</li>
+          <li>Housekeeping &amp; Residential Services</li>
+          <li>Customer Care Services</li>
+          <li>Food Production &amp; Culinary Operations</li>
+          <li>Construction &amp; Skilled Trades</li>
+          <li>Manufacturing &amp; Industrial Operations</li>
+          <li>Domestic Worker Training (New)</li>
+        </ul>
+
+        <a href="contact.html#contact-form" class="why-btn">
+          Ask About Availability <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </article>
+  </div>
+</section>
+
+
+
+  <!-- DURATION & KEY BENEFITS -->
+  <section class="why-vgee vgee-intern-section" id="duration-benefits">
+    <div class="why-head">
+      <h2>Programme Duration &amp; Key Benefits</h2>
+      <p class="small">
+        Our 3–12 month structured vocational and professional training programmes provide international exposure and career-ready support.
+      </p>
+    </div>
+
+    <article class="why-row why-row--reverse">
+      <div class="why-media">
+        <img src="assets/images/internship-benefits.jpg" alt="Internship training in professional EU environments" loading="lazy">
+      </div>
+
+      <div class="why-content">
+        <h3>3–12 Months, Structured for Outcomes</h3>
+
+        <ul class="why-list">
+          <li>Hands-on learning with guided practical training</li>
+          <li>Institutional mentorship and structured supervision</li>
+          <li>International exposure aligned to sector practice</li>
+          <li>Career-ready certification and workforce preparation</li>
+        </ul>
+
+        <div class="vgee-intern-cards">
+          <div class="vgee-intern-card">
+            <strong>3–6 Months</strong>
+            <div class="small">Foundation to intermediate practice</div>
+          </div>
+          <div class="vgee-intern-card">
+            <strong>6–9 Months</strong>
+            <div class="small">Full pathway development</div>
+          </div>
+          <div class="vgee-intern-card">
+            <strong>9–12 Months</strong>
+            <div class="small">Advanced immersion &amp; refinement</div>
+          </div>
+        </div>
+
+        <a href="contact.html#contact-form" class="why-btn">
+          Discuss Duration <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  </section>
+
+
+  <!-- ELIGIBILITY -->
+  <section class="why-vgee vgee-intern-section" id="eligibility">
+    <div class="why-head">
+      <h2>Eligibility Criteria</h2>
+      <p class="small">Open to Asian applicants who meet the following requirements.</p>
+    </div>
+
+    <article class="why-row">
+      <div class="why-media">
+        <img src="assets/images/eligibility.jpg" alt="Eligibility guidance for internship pathways" loading="lazy">
+      </div>
+
+      <div class="why-content">
+        <h3>Who Can Apply?</h3>
+
+        <ul class="why-list">
+          <li>Possess basic educational qualifications</li>
+          <li>Demonstrate financial readiness for training and living expenses</li>
+          <li>Show strong motivation for international skill development</li>
+          <li>Ideal for students, entry-level professionals, and skill-based trainees</li>
+        </ul>
+
+        <a href="contact.html#contact-form" class="why-btn">
+          Check Your Eligibility <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  </section>
+
+
+  <!-- APPLICATION GUIDELINES / PROCESS -->
+<section class="why-vgee vgee-programs-section" id="application-guidelines">
+  
+    <div class="why-head">
+      <h2>Application Process</h2>
+      <p class="small">
+        A clear, structured 5-step enrolment process - designed for transparency and guidance
+        from registration to travel.
+      </p>
+    </div>
+
+    <div class="vgee-panel vgee-panel--padded">
+      <ol class="vgee-steps">
+        <li>
+          <span class="vgee-step__num">1</span>
+          <div>
+            <strong>Online Registration</strong>
+            <div class="small">
+              Submit your application through our secure portal and confirm your preferred pathway.
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="vgee-step__num">2</span>
+          <div>
+            <strong>Structured Training Programme</strong>
+            <div class="small">
+              Begin pre-departure preparation or skill-based training aligned to your pathway.
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="vgee-step__num">3</span>
+          <div>
+            <strong>Partner Institution Acceptance</strong>
+            <div class="small">
+              Receive confirmation from an accredited European partner institution.
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="vgee-step__num">4</span>
+          <div>
+            <strong>Visa Processing &amp; Approval</strong>
+            <div class="small">
+              Complete documentation and visa formalities with structured guidance.
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="vgee-step__num">5</span>
+          <div>
+            <strong>Travel &amp; Programme Commencement</strong>
+            <div class="small">
+              Finalise travel arrangements and begin your international training journey.
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <div style="margin-top:18px">
+        <a href="contact.html#contact-form" class="why-btn">
+          Start Application <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  
+</section>
+
+
+
+
+<section class="why-vgee vgee-testimonials" id="testimonials">
+  <div class="why-head">
+    <h2>Success Stories</h2>
+    <p class="small">
+      Hear from students who took the next step with VGEE and started building their future in Europe.
+    </p>
+  </div>
+
+  <div class="vgee-testimonials__grid">
+
+    <!-- Card 1 -->
+    <article class="vgee-tcard">
+      <div class="vgee-tcard__top">
+        <span class="vgee-tcard__tag">Testimonials</span>
+
+        <h3 class="vgee-tcard__title">Clear from day one</h3>
+
+        <p class="vgee-tcard__quote">
+          “VGEE made the process clear from day one. The guidance around eligibility and paperwork saved me
+          weeks of confusion, and I felt supported at every step.”
+        </p>
+      </div>
+
+      <div class="vgee-tcard__bottom">
+        <div class="vgee-tcard__media">
+          <img src="assets/images/student-1.jpg" alt="VGEE student testimonial">
+          <span class="vgee-tcard__arrow" aria-hidden="true">↗</span>
+        </div>
+
+        <div class="vgee-tcard__meta">
+          <strong class="vgee-tcard__name">Amaya Perera</strong>
+          <span class="vgee-tcard__role">Sri Lanka • Internship Pathway</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="vgee-tcard">
+      <div class="vgee-tcard__top">
+        <span class="vgee-tcard__tag">Testimonials</span>
+
+        <h3 class="vgee-tcard__title">Transparent &amp; realistic</h3>
+
+        <p class="vgee-tcard__quote">
+          “What I liked most was the transparency. I knew exactly what to prepare, what to expect,
+          and what the realistic timeline looked like.”
+        </p>
+      </div>
+
+      <div class="vgee-tcard__bottom">
+        <div class="vgee-tcard__media">
+          <img src="assets/images/student-2.jpg" alt="VGEE student testimonial">
+          <span class="vgee-tcard__arrow" aria-hidden="true">↗</span>
+        </div>
+
+        <div class="vgee-tcard__meta">
+          <strong class="vgee-tcard__name">Rohan Shrestha</strong>
+          <span class="vgee-tcard__role">Nepal • Study &amp; Training Support</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="vgee-tcard">
+      <div class="vgee-tcard__top">
+        <span class="vgee-tcard__tag">Testimonials</span>
+
+        <h3 class="vgee-tcard__title">End-to-end support</h3>
+
+        <p class="vgee-tcard__quote">
+          “The end-to-end support was a huge relief. From documentation to settling in, the advice was practical
+          and timely - it genuinely reduced stress.”
+        </p>
+      </div>
+
+      <div class="vgee-tcard__bottom">
+        <div class="vgee-tcard__media">
+          <img src="assets/images/student-3.jpg" alt="VGEE student testimonial">
+          <span class="vgee-tcard__arrow" aria-hidden="true">↗</span>
+        </div>
+
+        <div class="vgee-tcard__meta">
+          <strong class="vgee-tcard__name">Farzana Akter</strong>
+          <span class="vgee-tcard__role">Bangladesh • Admissions Assistance</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+  <!-- CTA -->
+  <section class="why-vgee why-vgee--cta" id="contact">
+    <div class="why-head why-head--center">
+      <h2>Start Your European Journey with an expert</h2>
+      <p class="small">
+        Get clear guidance on industries, eligibility, timelines, and next steps - with no obligation.
+      </p>
+      <a href="contact.html#contact-form" class="why-btn why-btn--cta">
+        Schedule Your Free Consultation <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
 
 <footer>
   <div class="container footer-grid">
     <div>
       <img src="assets/icons/logo.svg" alt="VGEE" style="height:42px;margin-bottom:8px" />
-      <p class="footer-note">Vertec Global Education &amp; Employment – bridging Asia and Italy through legal education and training.</p>
+      <p class="footer-note">
+        Vertec Global Education &amp; Employment – bridging Asia and Italy through legal education and training.
+      </p>
     </div>
 
     <div>
       <h4>Services</h4>
       <ul style="list-style:none;padding-left:0">
-        <li><a href="programs.html">Study & Training</a></li>
+        <li><a href="programs.html">Study &amp; Training</a></li>
         <li><a href="training.html">Skill Development</a></li>
         <li><a href="internships.html">Internships</a></li>
       </ul>
@@ -109,21 +452,31 @@
 
     <div>
       <h4>Legal</h4>
-      <p class="small">VGEE is not a foreign employment agency. We do not recruit workers from Asia to overseas jobs. Employment support is only provided inside Italy via registered Italian agencies.</p>
+      <p class="small">
+        VGEE is not a foreign employment agency. We do not recruit workers from Asia to overseas jobs.
+        Employment support is only provided inside Italy via registered Italian agencies.
+      </p>
     </div>
 
     <div>
       <h4>Contact</h4>
-      <p class="small">Email: <a href="mailto:info@your-domain.com">info@your-domain.com</a><br/>Phone: +39 XXX XXX XXXX</p>
+      <p class="small">
+        Email: <a href="mailto:info@your-domain.com">info@your-domain.com</a><br/>
+        Phone: +39 XXX XXX XXXX
+      </p>
     </div>
   </div>
 
   <div style="text-align:center;padding:12px;border-top:1px solid rgba(255,255,255,0.02);margin-top:18px">
-    <small class="small">© <span id="year"></span> Vertec Global Education &amp; Employment (VGEE)</small>
+    <small class="small">
+      © <span id="year"></span> Vertec Global Education &amp; Employment (VGEE)
+    </small>
   </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </footer>
+
 <script src="js/script.js"></script>
+<script src="js/coverflow.js"></script>
 
 </body>
 </html>
