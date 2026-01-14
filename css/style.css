@@ -2118,7 +2118,7 @@ footer a:hover{ color:#fff; }
 }
 
 /* Mobile: hide logo + center text */
-@media (max-width: 700px){
+@media (max-width: 500px){
   .bridge-hero{
     height: 84vh;
     min-height: 520px;
