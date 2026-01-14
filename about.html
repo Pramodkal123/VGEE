@@ -1,29 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About VGEE</title><meta name="description" content="About Vertec Global Education and Employment — mission, vision and values.">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>About Us | VGEE - Vertec Global Education & Employment</title>
+  <meta name="description" content="VGEE is a legal, ethical education and mobility company empowering Asian students with European-standard skills and international pathways." />
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16">
   <link rel="icon" type="image/png" href="assets/icons/favicon.ico">
 
-  <!-- Apple logo (iPhone/iPad home screen) -->
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-  <!-- (Optional) Manifest for PWA metadata -->
-  <link rel="manifest" href="assets/icons/site.webmanifest"> 
-<link rel="stylesheet" href="css/style.css"></head>
 <body>
-  <header>
+
+<header>
   <div class="container nav">
-    <div class="brand">
+    <a href="index.html" class="brand">
       <img src="assets/icons/logo.svg" alt="VGEE Logo" />
       <div>
         <div style="font-weight:800">VGEE</div>
         <small class="small">Vertec Global Education &amp; Employment</small>
       </div>
-    </div>
+    </a>
 
-    <nav aria-label="Primary">
+    <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="programs.html">Programs</a></li>
@@ -37,58 +41,173 @@
     </nav>
 
     <div class="lang-switch">
-      <a href="/it/">IT</a> | <a href="/si/">SI</a> | <a href="/ta/">TA</a>
-      <button class="mobile-toggle" aria-label="Open menu">☰</button>
-    </div>
-  </div>
-
-  <!-- Mobile menu -->
-  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
-    <div class="panel">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div style="font-weight:800">VGEE</div>
-        <button id="closeMenu" aria-label="Close menu">✕</button>
-      </div>
-      <nav style="margin-top:12px">
-        <ul style="list-style:none;padding-left:0">
-          <li style="padding:8px 0"><a href="index.html">Home</a></li>
-          <li style="padding:8px 0"><a href="programs.html">Programs</a></li>
-          <li style="padding:8px 0"><a href="training.html">Training</a></li>
-          <li style="padding:8px 0"><a href="internships.html">Internships</a></li>
-          <li style="padding:8px 0"><a href="services.html">Italy Services</a></li>
-          <li style="padding:8px 0"><a href="about.html">About</a></li>
-          <li style="padding:8px 0"><a href="blog.html">Blog</a></li>
-          <li style="padding:8px 0"><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+      <a href="it/index.html">IT</a> | <a href="si/index.html">SI</a> | <a href="ta/index.html">TA</a>
+      <button class="mobile-toggle">☰</button>
     </div>
   </div>
 </header>
 
+<main class="container">
 
-  <main class="container">
-    <section>
-      <h1>About Vertec Global Education &amp; Employment (VGEE)</h1>
-      <p class="small">Founded by <strong>Ravi Egodavitharana</strong>, VGEE is headquartered in Pisa, Italy, with recruitment and support operations across Sri Lanka and South Asia. We help Asian students and trainees access legal and ethical education-to-internship pathways in Italy.</p>
+  <!-- ABOUT OVERVIEW (same as Training hero) -->
+  <section class="why-vgee vgee-programs-hero" id="about-overview">
+    <div class="why-head">
+      <h1 class="vgee-programs-title">About VGEE</h1>
 
-      <div class="grid">
-        <div class="card"><h3>Mission</h3><p class="small">To connect talent with opportunity through education, training and ethical employment support.</p></div>
-        <div class="card"><h3>Vision</h3><p class="small">To be the leading Asia–Italy gateway for education and practical professional pathways.</p></div>
-      </div>
-    </section>
-  </main>
+      <p class="small vgee-programs-sub">
+        A legal, ethical, education-focused training and mobility company supporting Asian students
+        in developing European-standard skills and international pathways.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT VGEE -->
+  <section class="why-vgee" id="about-vgee">
+    <div class="why-head">
+      <h2>About VGEE</h2>
+    </div>
+
+    <div class="vgee-panel vgee-panel--padded">
+      <p class="small">
+        Vertec Global Education &amp; Employment (VGEE) is a legally compliant and ethically driven
+        education and mobility company. Our primary objective is to empower Asian students with
+        European-standard training, skills, and international career pathways, providing structured
+        guidance, resources, and long-term support.
+      </p>
+
+      <p class="small" style="margin-top:12px">
+        Our secondary objective is to contribute to the European labour market by developing and
+        connecting skilled, capable young professionals in alignment with industry needs, education
+        standards, and regulatory frameworks.
+      </p>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section class="why-vgee" id="mission-vision">
+    <div class="why-zigzag">
+
+      <article class="why-row">
+        <div class="why-content">
+          <h3>Driving Purpose (Our Mission)</h3>
+          <p class="small">
+            To bridge continents through education and opportunity, empowering Asian talent to thrive
+            in global careers while strengthening European industries with skilled, dedicated professionals.
+          </p>
+        </div>
+      </article>
+
+      <article class="why-row why-row--reverse">
+        <div class="why-content">
+          <h3>Shaping Tomorrow (Our Vision)</h3>
+          <p class="small">
+            To be the leading bridge between Asian talent and European opportunity, recognised globally
+            for transforming lives through ethical education, mobility, and internship solutions.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- WHY VGEE IS UNIQUE -->
+  <section class="why-vgee" id="why-unique">
+    <div class="why-head">
+      <h2>Why VGEE Is Unique</h2>
+    </div>
+
+    <div class="vgee-panel vgee-panel--padded">
+      <ul class="why-list">
+        <li>European-standard programmes aligned with international benchmarks</li>
+        <li>Seamless, guided mobility from training to internships</li>
+        <li>Ethical and legal compliance at every stage</li>
+        <li>Student-focused pathways designed around individual goals</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- WHY VGEE IS UNIQUE -->
+  <section class="why-vgee" id="core-values">
+    <div class="why-head">
+      <h2>Core Values in Action</h2>
+    </div>
+
+    <div class="vgee-panel vgee-panel--padded">
+      <ul class="why-list">
+         <li>Integrity: Transparent, accountable, and honest engagement</li>
+        <li>Excellence: Delivering high-quality training and outcomes</li>
+        <li>Innovation: Programmes aligned with evolving global needs</li>
+        <li>Empowerment: Building confidence and global capability</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- TRUSTED PARTNERSHIPS -->
+  <section class="why-vgee" id="partnerships">
+    <div class="why-head">
+      <h2>Trusted Partnerships</h2>
+    </div>
+
+    <div class="vgee-panel vgee-panel--padded">
+      <p class="small">
+        VGEE collaborates with recognised institutions across Europe and Asia to provide authentic
+        educational experiences, professional networks, and international opportunities that support
+        sustainable career development.
+      </p>
+    </div>
+  </section>
+
+  <!-- LEGAL & ETHICAL COMPLIANCE -->
+  <section class="why-vgee" id="compliance">
+    <div class="why-head">
+      <h2>Legal and Ethical Compliance</h2>
+    </div>
+
+    <div class="vgee-panel vgee-panel--padded">
+      <p class="small">
+        VGEE strictly adheres to all education and mobility regulations to ensure programmes are safe,
+        legal, and ethically delivered.
+      </p>
+
+      <p class="small" style="margin-top:10px">
+        We do not operate as a foreign employment agency. Employment support is provided only within
+        Italy through registered Italian agencies.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="why-vgee why-vgee--cta" id="about-cta">
+    <div class="why-head why-head--center">
+      <h2>Speak With Our Team</h2>
+      <p class="small">
+        Get clear guidance on training pathways, eligibility, and next steps.
+      </p>
+
+      <a href="contact.html#contact-form" class="why-btn why-btn--cta">
+        Schedule a Consultation <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
 
  <footer>
   <div class="container footer-grid">
     <div>
       <img src="assets/icons/logo.svg" alt="VGEE" style="height:42px;margin-bottom:8px" />
-      <p class="footer-note">Vertec Global Education &amp; Employment – bridging Asia and Italy through legal education and training.</p>
+      <p class="footer-note">
+        Vertec Global Education &amp; Employment – bridging Asia and Italy through legal education and training.
+      </p>
     </div>
 
     <div>
       <h4>Services</h4>
       <ul style="list-style:none;padding-left:0">
-        <li><a href="programs.html">Study & Training</a></li>
+        <li><a href="programs.html">Study &amp; Training</a></li>
         <li><a href="training.html">Skill Development</a></li>
         <li><a href="internships.html">Internships</a></li>
       </ul>
@@ -96,21 +215,30 @@
 
     <div>
       <h4>Legal</h4>
-      <p class="small">VGEE is not a foreign employment agency. We do not recruit workers from Asia to overseas jobs. Employment support is only provided inside Italy via registered Italian agencies.</p>
+      <p class="small">
+        VGEE is not a foreign employment agency. We do not recruit workers from Asia to overseas jobs.
+        Employment support is only provided inside Italy via registered Italian agencies.
+      </p>
     </div>
 
     <div>
       <h4>Contact</h4>
-      <p class="small">Email: <a href="mailto:info@your-domain.com">info@your-domain.com</a><br/>Phone: +39 XXX XXX XXXX</p>
+      <p class="small">
+        Email: <a href="mailto:info@your-domain.com">info@your-domain.com</a><br/>
+        Phone: +39 XXX XXX XXXX
+      </p>
     </div>
   </div>
 
   <div style="text-align:center;padding:12px;border-top:1px solid rgba(255,255,255,0.02);margin-top:18px">
-    <small class="small">© <span id="year"></span> Vertec Global Education &amp; Employment (VGEE)</small>
+    <small class="small">
+      © <span id="year"></span> Vertec Global Education &amp; Employment (VGEE)
+    </small>
   </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </footer>
-<script src="js/script.js"></script>
 
+
+<script src="js/script.js"></script>
 </body>
 </html>

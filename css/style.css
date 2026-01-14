@@ -1869,3 +1869,379 @@ footer a:hover{ color:#fff; }
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+
+
+
+/* =========================================================
+   VIDEO HERO (FULL BLEED) — Drop-in replacement
+   Replaces: .bridge-hero-full styles
+   ========================================================= */
+
+.bridge-hero{
+  position: relative;
+  width: 100%;
+  /* below header: matches your earlier 74px offset */
+  min-height: 560px;
+  height: calc(100vh - 74px);
+  overflow: hidden;
+  background: #020617;
+}
+
+/* On small screens, don't subtract header (keeps things simple) */
+@media (max-width: 900px){
+  .bridge-hero{
+    height: 82vh;
+    min-height: 520px;
+  }
+}
+
+/* Background video */
+.bridge-hero__bg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* IMPORTANT */
+  object-position: center;
+  display: block;
+  filter: saturate(1.05) contrast(1.08);
+  transform: scale(1.02); /* tiny scale to avoid edge seams */
+}
+
+/* Fallback image (only visible if video doesn't load) */
+.bridge-hero__fallback{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: none;
+}
+
+/* If you want fallback always behind, keep it block but lower opacity */
+.bridge-hero__fallback{
+  display: block;
+  opacity: 0.0; /* keep hidden by default */
+}
+
+/* Overlay to match your site mood + readability */
+.bridge-hero__overlay{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(56,189,248,.18), transparent 55%),
+    radial-gradient(circle at 85% 70%, rgba(239,68,68,.12), transparent 55%),
+    linear-gradient(90deg, rgba(2,6,23,.78) 0%, rgba(2,6,23,.55) 45%, rgba(2,6,23,.35) 100%),
+    linear-gradient(180deg, rgba(2,6,23,.25), rgba(2,6,23,.65) 60%, rgba(2,6,23,.92));
+}
+
+/* Content width wrapper */
+.bridge-hero__inner{
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 42px 20px;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Left side */
+.bridge-hero__kicker{
+  margin: 0 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(226,232,240,.9);
+  background: rgba(15,23,42,.55);
+  border: 1px solid rgba(148,163,184,.35);
+}
+
+.bridge-hero__title{
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: rgba(255,255,255,.95);
+  text-shadow: 0 18px 45px rgba(0,0,0,.35);
+}
+
+.bridge-hero__lead{
+  margin: 14px 0 0;
+  max-width: 62ch;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: rgba(226,232,240,.82);
+}
+
+/* CTA */
+.bridge-hero__cta{
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bridge-hero__btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.20);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 40px rgba(0,0,0,.35);
+}
+.bridge-hero__btn:hover{
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.bridge-hero__link{
+  color: rgba(226,232,240,.86);
+  border-bottom: 1px solid rgba(226,232,240,.22);
+  padding-bottom: 2px;
+}
+.bridge-hero__link:hover{
+  color: #fff;
+  border-bottom-color: rgba(255,255,255,.40);
+}
+
+/* Right logo */
+.bridge-hero__right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bridge-hero__logo{
+  width: min(420px, 90%);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 22px 70px rgba(0,0,0,.55));
+  opacity: 0.98;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .bridge-hero__inner{
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding: 34px 18px;
+  }
+
+  .bridge-hero__right{
+    justify-content: flex-start;
+    margin-top: 18px;
+  }
+
+  .bridge-hero__logo{
+    width: min(360px, 92%);
+  }
+}
+
+
+
+/* =========================================================
+   VIDEO HERO RESPONSIVE TWEAKS
+   - Desktop: logo ~75%
+   - Tablet: logo ~50-55%, smaller text
+   - Mobile: hide logo, center text
+   ========================================================= */
+
+/* Desktop logo sizing (default) */
+.bridge-hero__logo{
+  width: min(320px, 75%); /* ~75% feel */
+  max-width: 340px;       /* hard cap */
+}
+
+/* Slightly reduce title on smaller desktops */
+@media (max-width: 1200px){
+  .bridge-hero__title{
+    font-size: clamp(2.0rem, 3.6vw, 3.0rem);
+  }
+  .bridge-hero__logo{
+    width: min(300px, 70%);
+    max-width: 320px;
+  }
+}
+
+/* Tablet / iPad */
+@media (max-width: 980px){
+  .bridge-hero{
+    height: 78vh;
+    min-height: 520px;
+  }
+
+  .bridge-hero__inner{
+    grid-template-columns: 1fr 0.9fr; /* keep 2 cols but tighter */
+    align-items: center;
+    gap: 18px;
+    padding: 34px 18px;
+  }
+
+  .bridge-hero__title{
+    font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+    line-height: 1.12;
+  }
+
+  .bridge-hero__lead{
+    font-size: 0.98rem;
+    max-width: 60ch;
+  }
+
+  .bridge-hero__logo{
+    width: min(220px, 55%); /* ~50-55% look */
+    max-width: 240px;
+  }
+}
+
+/* Mobile: hide logo + center text */
+@media (max-width: 700px){
+  .bridge-hero{
+    height: 84vh;
+    min-height: 520px;
+  }
+
+  .bridge-hero__inner{
+    grid-template-columns: 1fr; /* single column */
+    text-align: center;
+    padding: 30px 16px;
+    align-items: center;
+  }
+
+  .bridge-hero__kicker{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bridge-hero__lead{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bridge-hero__cta{
+    justify-content: center;
+  }
+
+  .bridge-hero__right{
+    display: none; /* hide logo entirely on mobile */
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 420px){
+  .bridge-hero__title{
+    font-size: 1.65rem;
+  }
+  .bridge-hero__lead{
+    font-size: 0.95rem;
+  }
+  .bridge-hero__btn{
+    width: 100%;
+  }
+  .bridge-hero__cta{
+    width: 100%;
+  }
+}
+
+
+/* iPad/tablet portrait: stop hero being too tall */
+@media (max-width: 1024px) and (min-width: 701px){
+  .bridge-hero{
+    height: min(78vh, 640px);   /* cap */
+    min-height: 560px;         /* keeps it premium */
+  }
+}
+
+/* if you want iPad Mini even shorter */
+@media (max-width: 820px) and (min-width: 701px){
+  .bridge-hero{
+    height: min(72vh, 600px);
+    min-height: 520px;
+  }
+}
+
+
+
+
+/* =========================================================
+   TEXT BELOW HERO (3 cards) - inside .container
+   ========================================================= */
+
+.bridge-copy{
+  padding-top: 22px;
+  padding-bottom: 10px;
+}
+
+.bridge-copy__cols{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Card matches your glass panels */
+.bridge-card{
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(15,23,42,.30);
+  border: 1px solid rgba(148,163,184,.28);
+  box-shadow: 0 18px 45px rgba(15,23,42,.40);
+  backdrop-filter: blur(10px);
+  min-width: 0;
+}
+
+.bridge-card h3{
+  margin: 0 0 10px;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+}
+
+.bridge-card .small{
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(226,232,240,.82);
+}
+
+.bridge-card .small + .small{
+  margin-top: 10px;
+}
+
+.bridge-card--focus{
+  border-color: rgba(34,197,94,.35);
+  box-shadow: 0 22px 55px rgba(15,23,42,.55);
+}
+
+/* Responsive stack */
+@media (max-width: 980px){
+  .bridge-copy__cols{
+    grid-template-columns: 1fr;
+  }
+
+  .bridge-hero-full{
+    height: 72vh;
+    min-height: 420px;
+  }
+}

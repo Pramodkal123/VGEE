@@ -1,27 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Italy Support Services — VGEE</title><meta name="description" content="Permesso di soggiorno, CIE, Tessera Sanitaria, accommodation and arrival support in Italy.">
-<!-- Favicon -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Italy Support Services | VGEE - Vertec Global Education & Employment</title>
+  <meta name="description" content="VGEE provides essential Italy support services for international students, seasonal workers, and families — documents, accommodation, relocation and legal guidance." />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16">
   <link rel="icon" type="image/png" href="assets/icons/favicon.ico">
-
-  <!-- Apple logo (iPhone/iPad home screen) -->
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="assets/icons/site.webmanifest">
 
-  <!-- (Optional) Manifest for PWA metadata -->
-  <link rel="manifest" href="assets/icons/site.webmanifest">  
-<link rel="stylesheet" href="css/style.css"></head>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
 <body>
- <header>
+
+<header>
   <div class="container nav">
-    <div class="brand">
+    <a href="index.html" class="brand" aria-label="Go to homepage">
       <img src="assets/icons/logo.svg" alt="VGEE Logo" />
       <div>
         <div style="font-weight:800">VGEE</div>
         <small class="small">Vertec Global Education &amp; Employment</small>
       </div>
-    </div>
+    </a>
 
     <nav aria-label="Primary">
       <ul>
@@ -37,7 +43,7 @@
     </nav>
 
     <div class="lang-switch">
-      <a href="/it/">IT</a> | <a href="/si/">SI</a> | <a href="/ta/">TA</a>
+      <a href="it/index.html">IT</a> | <a href="si/index.html">SI</a> | <a href="ta/index.html">TA</a>
       <button class="mobile-toggle" aria-label="Open menu">☰</button>
     </div>
   </div>
@@ -65,56 +71,261 @@
   </div>
 </header>
 
+<main class="container">
 
-  <main class="container">
-    <section>
-      <h1>Italy Support Services</h1>
-      <p class="small">Administrative and logistical support to help new arrivals settle in Italy.</p>
+  <!-- HERO / OVERVIEW (Programs-style) -->
+  <section class="why-vgee vgee-programs-hero" id="services-overview">
+    <div class="why-head">
+      <h1 class="vgee-programs-title">Italy Support Services</h1>
 
-      <div class="grid">
-        <div class="card"><h3>Permesso di Soggiorno (Permit)</h3><p class="small">Assistance with application and renewals.</p></div>
-        <div class="card"><h3>CIE (ID Card) &amp; Codice Fiscale</h3><p class="small">Support with ID and tax registrations.</p></div>
-        <div class="card"><h3>Tessera Sanitaria</h3><p class="small">Health card registration support.</p></div>
-        <div class="card"><h3>Accommodation & Residency Contracts</h3><p class="small">Help finding housing and preparing contracts.</p></div>
-        <div class="card"><h3>Airport Pickup & Orientation</h3><p class="small">Arrival assistance and local orientation sessions.</p></div>
-        <div class="card"><h3>Travel & Logistics</h3><p class="small">Air ticketing, money transfer guidance and courier services.</p></div>
+      <p class="small vgee-programs-sub">
+        Practical support for international students, seasonal workers, and families moving to Italy —
+        designed for smoother relocation and legal compliance from arrival to settling in.
+      </p>
+
+      <div class="vgee-programs-hero__cta">
+        <a href="#services-list" class="why-btn">
+          Explore Services <span aria-hidden="true">→</span>
+        </a>
+        <a href="contact.html#contact-form" class="vgee-link">Schedule Free Consultation</a>
       </div>
-    </section>
-  </main>
+
+      <div class="vgee-programs-kpis">
+        <div class="vgee-kpi">
+          <span class="vgee-kpi__tag">Documents</span>
+          <span class="small">Permits, IDs, tax code</span>
+        </div>
+
+        <div class="vgee-kpi">
+          <span class="vgee-kpi__tag">Living</span>
+          <span class="small">Accommodation & settling-in</span>
+        </div>
+
+        <div class="vgee-kpi">
+          <span class="vgee-kpi__tag">Legal</span>
+          <span class="small">Compliance & worker rights</span>
+        </div>
+      </div>
+
+      <p class="small" style="margin-top:14px; color: rgba(226,232,240,.78);">
+        <strong>Note:</strong> Support is guidance-focused and compliance-first. We do not provide overseas job recruitment.
+      </p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW OF SERVICES -->
+  <section class="why-vgee" id="services-list">
+    <div class="why-head">
+      <h2>Overview of Services</h2>
+      <p class="small">
+        Get a comprehensive introduction to our support services for international students, seasonal workers,
+        and families relocating to Italy. We provide structured guidance to help you navigate arrival,
+        documentation, housing, and legal requirements with clarity.
+      </p>
+    </div>
+
+    <div class="vgee-panel vgee-panel--padded">
+      <ul class="why-list">
+        <li>Essential document and administrative setup</li>
+        <li>Accommodation support and living essentials</li>
+        <li>Family visa and relocation guidance</li>
+        <li>Ongoing support for students already studying in Italy</li>
+        <li>Legal assistance and rights guidance for seasonal workers</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL (zigzag to keep the page dynamic + consistent) -->
+  <section class="why-vgee" id="services-detail">
+    <div class="why-head">
+      <h2>Support Services</h2>
+      <p class="small">
+        Each service is designed to reduce delays, improve compliance, and make your transition to Italy smoother.
+      </p>
+    </div>
+
+    <div class="why-zigzag">
+
+      <!-- Row 1 -->
+      <article class="why-row">
+        <div class="why-content">
+          <h3>Essential Document &amp; Administrative Support</h3>
+
+          <p class="small">
+            VGEE ensures a smooth transition to life in Italy with comprehensive administrative guidance.
+            We support international students, workers, and families with the key documents and processes required
+            for legal identification, healthcare access, and everyday services.
+          </p>
+
+          <ul class="why-list">
+            <li>Permesso di Soggiorno Assistance: Support for applying, renewing, and managing your residence permit.</li>
+            <li>Carta d’Identità Elettronica (CIE) Guidance: Help obtaining your electronic ID card for legal identification in Italy.</li>
+            <li>Tessera Sanitaria Registration: Secure your health card to access public healthcare services.</li>
+            <li>Codice Fiscale (Tax Code) Assistance: Obtain your tax code for banking, contracts, and compliance.</li>
+            <li>Bank Account Opening Support: Guidance on documentation and selecting suitable banking options.</li>
+          </ul>
+
+          <a href="contact.html#contact-form" class="why-btn">
+            Ask About Documents <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Row 2 -->
+      <article class="why-row why-row--reverse">
+        <div class="why-content">
+          <h3>Reliable Accommodation &amp; Living Support</h3>
+
+          <p class="small">
+            Find housing that fits your pathway and budget. From student accommodation to longer-term rentals,
+            we guide you through practical decisions and help you understand contracts and living essentials.
+          </p>
+
+          <ul class="why-list">
+            <li>Guidance on housing options (student apartments, shared housing, long-term rentals)</li>
+            <li>Support understanding rental terms, deposits, and contract basics</li>
+            <li>Cost-effective area recommendations and local living essentials</li>
+            <li>Settling-in guidance for utilities and everyday needs (where applicable)</li>
+          </ul>
+
+          <a href="contact.html#contact-form" class="why-btn">
+            Ask About Accommodation <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Row 3 -->
+      <article class="why-row">
+        <div class="why-content">
+          <h3>Family Visa &amp; Relocation Guidance</h3>
+
+          <p class="small">
+            Families relocating to Italy require additional planning and compliance steps. Our team helps you
+            understand the process and prepare for a smoother transition for spouses and dependents.
+          </p>
+
+          <ul class="why-list">
+            <li>Guidance for family visa processes and residency permit steps</li>
+            <li>Relocation planning support (timeline and key requirements)</li>
+            <li>School enrollment guidance for dependents (where applicable)</li>
+            <li>Healthcare registration and compliance guidance</li>
+          </ul>
+
+          <a href="contact.html#contact-form" class="why-btn">
+            Discuss Family Relocation <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Row 4 -->
+      <article class="why-row why-row--reverse">
+        <div class="why-content">
+          <h3>Support Services for Students Already Studying in Italy</h3>
+
+          <p class="small">
+            If you are already in Italy, we provide ongoing support to help you stay compliant, manage renewals,
+            and navigate academic and administrative needs throughout your study period.
+          </p>
+
+          <ul class="why-list">
+            <li>Visa and residency renewal guidance and documentation support</li>
+            <li>Academic support guidance (processes, timelines, required steps)</li>
+            <li>Administrative help to reduce confusion and delays</li>
+            <li>Career readiness guidance (where applicable to your pathway)</li>
+          </ul>
+
+          <a href="contact.html#contact-form" class="why-btn">
+            Get Ongoing Support <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Row 5 -->
+      <article class="why-row">
+        <div class="why-content">
+          <h3>Legal Assistance &amp; Rights for Seasonal Workers in Italy</h3>
+
+          <p class="small">
+            Seasonal work requires careful legal compliance. We provide guidance around contracts, tax processes,
+            labour rights, and visa-related responsibilities so temporary work remains safe, legal, and organised.
+          </p>
+
+          <ul class="why-list">
+            <li>Support understanding work contracts and seasonal requirements</li>
+            <li>Tax guidance direction and compliance checkpoints (where applicable)</li>
+            <li>Labour rights and protections overview</li>
+            <li>Visa compliance guidance to reduce risk and avoid issues</li>
+          </ul>
+
+          <a href="contact.html#contact-form" class="why-btn">
+            Ask About Worker Rights <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="why-vgee why-vgee--cta" id="services-cta">
+    <div class="why-head why-head--center">
+      <h2>Need Help Settling in Italy?</h2>
+      <p class="small">
+        Get clear guidance on documents, accommodation, family relocation, and legal compliance — with no obligation.
+      </p>
+
+      <a href="contact.html#contact-form" class="why-btn why-btn--cta">
+        Schedule Your Free Consultation <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+</main>
 
 <footer>
   <div class="container footer-grid">
     <div>
       <img src="assets/icons/logo.svg" alt="VGEE" style="height:42px;margin-bottom:8px" />
-      <p class="footer-note">Vertec Global Education &amp; Employment – bridging Asia and Italy through legal education and training.</p>
+      <p class="footer-note">
+        Vertec Global Education &amp; Employment – bridging Asia and Italy through legal education and training.
+      </p>
     </div>
 
     <div>
       <h4>Services</h4>
       <ul style="list-style:none;padding-left:0">
-        <li><a href="programs.html">Study & Training</a></li>
+        <li><a href="programs.html">Study &amp; Training</a></li>
         <li><a href="training.html">Skill Development</a></li>
         <li><a href="internships.html">Internships</a></li>
+        <li><a href="services.html">Italy Support Services</a></li>
       </ul>
     </div>
 
     <div>
       <h4>Legal</h4>
-      <p class="small">VGEE is not a foreign employment agency. We do not recruit workers from Asia to overseas jobs. Employment support is only provided inside Italy via registered Italian agencies.</p>
+      <p class="small">
+        VGEE is not a foreign employment agency. We do not recruit workers from Asia to overseas jobs.
+        Employment support is only provided inside Italy via registered Italian agencies.
+      </p>
     </div>
 
     <div>
       <h4>Contact</h4>
-      <p class="small">Email: <a href="mailto:info@your-domain.com">info@your-domain.com</a><br/>Phone: +39 XXX XXX XXXX</p>
+      <p class="small">
+        Email: <a href="mailto:info@your-domain.com">info@your-domain.com</a><br/>
+        Phone: +39 XXX XXX XXXX
+      </p>
     </div>
   </div>
 
   <div style="text-align:center;padding:12px;border-top:1px solid rgba(255,255,255,0.02);margin-top:18px">
-    <small class="small">© <span id="year"></span> Vertec Global Education &amp; Employment (VGEE)</small>
+    <small class="small">
+      © <span id="year"></span> Vertec Global Education &amp; Employment (VGEE)
+    </small>
   </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </footer>
-<script src="js/script.js"></script>
 
+<script src="js/script.js"></script>
 </body>
 </html>
