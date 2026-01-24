@@ -1,0 +1,286 @@
+/* ================================
+   PROGRAMS PAGE (SCOPED ONLY)
+   This file is safe to reuse/clone
+   ================================ */
+
+#vgee-programs {
+  --vgee-ink: #111;
+  --vgee-line: #000;
+  --vgee-paper: #fff;
+  --vgee-accent: #1f5fbf;
+  --vgee-max: 1100px;
+  --vgee-font: "Times New Roman", Times, serif;
+  --vgee-font-sans: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  background: #f3f4f6;
+  color: var(--vgee-ink);
+  padding: 36px 16px 60px;
+}
+
+#vgee-programs .vgee-wrap {
+  max-width: var(--vgee-max);
+  margin: 0 auto;
+}
+
+/* Document Title */
+#vgee-programs .vgee-docHead {
+  text-align: center;
+  margin-bottom: 18px;
+}
+#vgee-programs .vgee-docHead__title {
+  font-family: var(--vgee-font);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  margin: 0;
+}
+
+/* Document container */
+#vgee-programs .vgee-doc {
+  background: var(--vgee-paper);
+  border: 1px solid var(--vgee-line);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Strip header */
+#vgee-programs .vgee-doc__strip {
+  border-bottom: 1px solid var(--vgee-line);
+  padding: 14px 16px;
+  text-align: center;
+}
+#vgee-programs .vgee-doc__stripTitle {
+  margin: 0;
+  font-family: var(--vgee-font);
+  font-size: 18px;
+  font-weight: 700;
+}
+#vgee-programs .vgee-doc__stripSub {
+  margin: 4px 0 0;
+  font-family: var(--vgee-font);
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* Hero image */
+#vgee-programs .vgee-heroImg {
+  margin: 0;
+  border-bottom: 1px solid var(--vgee-line);
+}
+#vgee-programs .vgee-heroImg img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Center blue title */
+#vgee-programs .vgee-doc__sectionTitle {
+  padding: 12px 16px;
+  text-align: center;
+  color: var(--vgee-accent);
+  font-family: var(--vgee-font);
+  font-weight: 700;
+  border-bottom: 1px solid var(--vgee-line);
+}
+
+/* Body */
+#vgee-programs .vgee-doc__body {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--vgee-line);
+}
+#vgee-programs .vgee-prose {
+  font-family: var(--vgee-font);
+  font-size: 14px;
+  line-height: 1.45;
+}
+#vgee-programs .vgee-prose p { margin: 0 0 12px; }
+#vgee-programs .vgee-note { margin: 12px 0 0; }
+
+/* Rows */
+#vgee-programs .vgee-row {
+  display: grid;
+  border-bottom: 1px solid var(--vgee-line);
+}
+#vgee-programs .vgee-row--2 { grid-template-columns: 1fr 1fr; }
+#vgee-programs .vgee-row--1 { grid-template-columns: 1fr; }
+
+#vgee-programs .vgee-cell { padding: 12px 16px; }
+#vgee-programs .vgee-row--2 .vgee-cell:first-child {
+  border-right: 1px solid var(--vgee-line);
+}
+
+/* Media cell */
+#vgee-programs .vgee-cell--media { padding: 0; }
+#vgee-programs .vgee-cell--media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
+}
+
+/* Inner box title */
+#vgee-programs .vgee-boxTitle {
+  font-family: var(--vgee-font);
+  font-weight: 800;
+  text-align: center;
+  margin: -12px -16px 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--vgee-line);
+}
+
+/* Divider title */
+#vgee-programs .vgee-dividerTitle {
+  font-family: var(--vgee-font);
+  font-weight: 800;
+  font-size: 22px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--vgee-line);
+}
+
+/* Program blocks */
+#vgee-programs .vgee-programBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--vgee-line);
+}
+#vgee-programs .vgee-programBlock__left {
+  padding: 12px 16px;
+  border-right: 1px solid var(--vgee-line);
+}
+#vgee-programs .vgee-programBlock__right {
+  padding: 12px 16px;
+}
+
+#vgee-programs .vgee-programBlock__title {
+  margin: 0 0 8px;
+  color: var(--vgee-accent);
+  font-family: var(--vgee-font);
+  font-size: 16px;
+  font-weight: 700;
+}
+#vgee-programs .vgee-programBlock__lead {
+  margin: 0 0 12px;
+  font-family: var(--vgee-font);
+}
+
+/* Lists */
+#vgee-programs .vgee-listGroup { margin: 10px 0; }
+#vgee-programs .vgee-label {
+  font-family: var(--vgee-font);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+#vgee-programs .vgee-text { font-family: var(--vgee-font); }
+
+#vgee-programs .vgee-list {
+  margin: 0;
+  padding-left: 18px;
+  font-family: var(--vgee-font);
+}
+#vgee-programs .vgee-list li { margin: 4px 0; }
+#vgee-programs .vgee-list--compact { padding-left: 16px; }
+
+/* Image grid */
+#vgee-programs .vgee-imgGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+#vgee-programs .vgee-imgGrid img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border: 1px solid rgba(0,0,0,0.15);
+}
+
+/* Country grid */
+#vgee-programs .vgee-countryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-bottom: 1px solid var(--vgee-line);
+}
+#vgee-programs .vgee-countryCard {
+  border-right: 1px solid var(--vgee-line);
+  padding: 12px 16px;
+}
+#vgee-programs .vgee-countryCard:last-child { border-right: none; }
+
+#vgee-programs .vgee-countryCard__img {
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+#vgee-programs .vgee-countryCard__img img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+#vgee-programs .vgee-countryCard__tag {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 6px 10px;
+  font-family: var(--vgee-font-sans);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+/* CTA */
+#vgee-programs .vgee-ctaLead {
+  font-family: var(--vgee-font);
+  color: var(--vgee-accent);
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+#vgee-programs .vgee-btnRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+#vgee-programs .vgee-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: var(--vgee-font-sans);
+  font-weight: 700;
+  border: 1px solid rgba(0,0,0,0.25);
+}
+#vgee-programs .vgee-btn--primary {
+  background: var(--vgee-accent);
+  color: #fff;
+  border-color: var(--vgee-accent);
+}
+#vgee-programs .vgee-btn--ghost {
+  background: #fff;
+  color: var(--vgee-accent);
+  border-color: rgba(31,95,191,0.45);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #vgee-programs .vgee-row--2,
+  #vgee-programs .vgee-programBlock {
+    grid-template-columns: 1fr;
+  }
+  #vgee-programs .vgee-row--2 .vgee-cell:first-child,
+  #vgee-programs .vgee-programBlock__left {
+    border-right: none;
+    border-bottom: 1px solid var(--vgee-line);
+  }
+  #vgee-programs .vgee-countryGrid { grid-template-columns: 1fr; }
+  #vgee-programs .vgee-countryCard {
+    border-right: none;
+    border-bottom: 1px solid var(--vgee-line);
+  }
+  #vgee-programs .vgee-countryCard:last-child { border-bottom: none; }
+}
