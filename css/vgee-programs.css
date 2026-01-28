@@ -1,286 +1,125 @@
-/* ================================
-   PROGRAMS PAGE (SCOPED ONLY)
-   This file is safe to reuse/clone
-   ================================ */
+/* ==========================================================
+   PROGRAMS PAGE – CLEAN + CONSISTENT SPACING (DROP-IN)
+   Uses your existing classes:
+   .why-vgee, .vgee-programs-section, .container, .why-row, etc.
+   ========================================================== */
 
-#vgee-programs {
-  --vgee-ink: #111;
-  --vgee-line: #000;
-  --vgee-paper: #fff;
-  --vgee-accent: #1f5fbf;
-  --vgee-max: 1100px;
-  --vgee-font: "Times New Roman", Times, serif;
-  --vgee-font-sans: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-
-  background: #f3f4f6;
-  color: var(--vgee-ink);
-  padding: 36px 16px 60px;
+/* 0) Global rhythm tokens (safe defaults) */
+:root{
+  --vgee-section-pad: 56px;      /* vertical space between sections */
+  --vgee-block-gap: 18px;        /* vertical space between blocks inside a section */
+  --vgee-card-pad: 18px;         /* panel padding */
+  --vgee-radius: 18px;
 }
 
-#vgee-programs .vgee-wrap {
-  max-width: var(--vgee-max);
-  margin: 0 auto;
+/* 1) Make every programs section spacing consistent */
+.why-vgee.vgee-programs-section{
+  padding: var(--vgee-section-pad) 0;
 }
 
-/* Document Title */
-#vgee-programs .vgee-docHead {
-  text-align: center;
-  margin-bottom: 18px;
+/* If any section has weird inherited padding, this stabilizes it */
+.why-vgee.vgee-programs-section + .why-vgee.vgee-programs-section{
+  margin-top: 0;
 }
-#vgee-programs .vgee-docHead__title {
-  font-family: var(--vgee-font);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-decoration: underline;
+
+/* 2) Standardize internal layout: each section container becomes a vertical stack */
+.why-vgee.vgee-programs-section .container{
+  display: flex;
+  flex-direction: column;
+  gap: var(--vgee-block-gap);
+}
+
+/* 3) Remove default margins that stack into “5–6cm” gaps */
+.why-vgee.vgee-programs-section .container > *{
+  margin: 0;
+}
+.why-vgee.vgee-programs-section h2,
+.why-vgee.vgee-programs-section h3,
+.why-vgee.vgee-programs-section p,
+.why-vgee.vgee-programs-section ul{
+  margin-top: 0;
+}
+
+/* Head blocks (section title + subtitle) */
+.why-vgee.vgee-programs-section .why-head{
+  margin: 0;
+}
+.why-vgee.vgee-programs-section .why-head h2{
+  margin: 0 0 8px;
+}
+.why-vgee.vgee-programs-section .why-head p{
   margin: 0;
 }
 
-/* Document container */
-#vgee-programs .vgee-doc {
-  background: var(--vgee-paper);
-  border: 1px solid var(--vgee-line);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+/* 4) Panels: consistent padding/shape (keeps your design, just stabilizes spacing) */
+.why-vgee.vgee-programs-section .vgee-panel{
+  border-radius: var(--vgee-radius);
+  overflow: hidden; /* helps images not break radius */
+}
+.why-vgee.vgee-programs-section .vgee-panel--padded{
+  padding: var(--vgee-card-pad);
 }
 
-/* Strip header */
-#vgee-programs .vgee-doc__strip {
-  border-bottom: 1px solid var(--vgee-line);
-  padding: 14px 16px;
-  text-align: center;
-}
-#vgee-programs .vgee-doc__stripTitle {
+/* 5) “why-row” grid: consistent spacing + stable columns */
+.why-vgee.vgee-programs-section .why-row{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  gap: 18px;
+  align-items: start;
   margin: 0;
-  font-family: var(--vgee-font);
-  font-size: 18px;
-  font-weight: 700;
-}
-#vgee-programs .vgee-doc__stripSub {
-  margin: 4px 0 0;
-  font-family: var(--vgee-font);
-  font-style: italic;
-  font-size: 13px;
 }
 
-/* Hero image */
-#vgee-programs .vgee-heroImg {
-  margin: 0;
-  border-bottom: 1px solid var(--vgee-line);
+/* Reverse layout (image on left / right) */
+.why-vgee.vgee-programs-section .why-row--reverse{
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1fr);
 }
-#vgee-programs .vgee-heroImg img {
-  display: block;
+.why-vgee.vgee-programs-section .why-row--reverse .why-media{ order: 2; }
+.why-vgee.vgee-programs-section .why-row--reverse .why-content{ order: 1; }
+
+/* Ensure text column never forces overflow */
+.why-vgee.vgee-programs-section .why-content{ min-width: 0; }
+
+/* Media styling */
+.why-vgee.vgee-programs-section .why-media{
+  margin: 0;
+  min-width: 0;
+}
+.why-vgee.vgee-programs-section .why-media img{
   width: 100%;
   height: auto;
-}
-
-/* Center blue title */
-#vgee-programs .vgee-doc__sectionTitle {
-  padding: 12px 16px;
-  text-align: center;
-  color: var(--vgee-accent);
-  font-family: var(--vgee-font);
-  font-weight: 700;
-  border-bottom: 1px solid var(--vgee-line);
-}
-
-/* Body */
-#vgee-programs .vgee-doc__body {
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--vgee-line);
-}
-#vgee-programs .vgee-prose {
-  font-family: var(--vgee-font);
-  font-size: 14px;
-  line-height: 1.45;
-}
-#vgee-programs .vgee-prose p { margin: 0 0 12px; }
-#vgee-programs .vgee-note { margin: 12px 0 0; }
-
-/* Rows */
-#vgee-programs .vgee-row {
-  display: grid;
-  border-bottom: 1px solid var(--vgee-line);
-}
-#vgee-programs .vgee-row--2 { grid-template-columns: 1fr 1fr; }
-#vgee-programs .vgee-row--1 { grid-template-columns: 1fr; }
-
-#vgee-programs .vgee-cell { padding: 12px 16px; }
-#vgee-programs .vgee-row--2 .vgee-cell:first-child {
-  border-right: 1px solid var(--vgee-line);
-}
-
-/* Media cell */
-#vgee-programs .vgee-cell--media { padding: 0; }
-#vgee-programs .vgee-cell--media img {
   display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 240px;
+  border-radius: 14px;
   object-fit: cover;
 }
 
-/* Inner box title */
-#vgee-programs .vgee-boxTitle {
-  font-family: var(--vgee-font);
-  font-weight: 800;
-  text-align: center;
-  margin: -12px -16px 10px;
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--vgee-line);
-}
-
-/* Divider title */
-#vgee-programs .vgee-dividerTitle {
-  font-family: var(--vgee-font);
-  font-weight: 800;
-  font-size: 22px;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--vgee-line);
-}
-
-/* Program blocks */
-#vgee-programs .vgee-programBlock {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--vgee-line);
-}
-#vgee-programs .vgee-programBlock__left {
-  padding: 12px 16px;
-  border-right: 1px solid var(--vgee-line);
-}
-#vgee-programs .vgee-programBlock__right {
-  padding: 12px 16px;
-}
-
-#vgee-programs .vgee-programBlock__title {
-  margin: 0 0 8px;
-  color: var(--vgee-accent);
-  font-family: var(--vgee-font);
-  font-size: 16px;
-  font-weight: 700;
-}
-#vgee-programs .vgee-programBlock__lead {
-  margin: 0 0 12px;
-  font-family: var(--vgee-font);
-}
-
-/* Lists */
-#vgee-programs .vgee-listGroup { margin: 10px 0; }
-#vgee-programs .vgee-label {
-  font-family: var(--vgee-font);
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-#vgee-programs .vgee-text { font-family: var(--vgee-font); }
-
-#vgee-programs .vgee-list {
+/* 6) Lists: consistent spacing */
+.why-vgee.vgee-programs-section .why-list{
   margin: 0;
   padding-left: 18px;
-  font-family: var(--vgee-font);
 }
-#vgee-programs .vgee-list li { margin: 4px 0; }
-#vgee-programs .vgee-list--compact { padding-left: 16px; }
-
-/* Image grid */
-#vgee-programs .vgee-imgGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+.why-vgee.vgee-programs-section .why-list li{
+  margin: 6px 0;
 }
-#vgee-programs .vgee-imgGrid img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  border: 1px solid rgba(0,0,0,0.15);
+.why-vgee.vgee-programs-section .why-content > *:last-child{
+  margin-bottom: 0;
 }
 
-/* Country grid */
-#vgee-programs .vgee-countryGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-bottom: 1px solid var(--vgee-line);
-}
-#vgee-programs .vgee-countryCard {
-  border-right: 1px solid var(--vgee-line);
-  padding: 12px 16px;
-}
-#vgee-programs .vgee-countryCard:last-child { border-right: none; }
-
-#vgee-programs .vgee-countryCard__img {
-  position: relative;
-  border: 1px solid rgba(0,0,0,0.15);
-  overflow: hidden;
-}
-#vgee-programs .vgee-countryCard__img img {
-  display: block;
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-}
-#vgee-programs .vgee-countryCard__tag {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  background: rgba(0,0,0,0.55);
-  color: #fff;
-  padding: 6px 10px;
-  font-family: var(--vgee-font-sans);
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 12px;
-  border-radius: 6px;
+/* 7) Country grid: consistent card spacing (if used) */
+.why-vgee.vgee-programs-section .vgee-country-grid,
+.why-vgee.vgee-programs-section .vgee-countryGrid{
+  gap: 14px;
 }
 
-/* CTA */
-#vgee-programs .vgee-ctaLead {
-  font-family: var(--vgee-font);
-  color: var(--vgee-accent);
-  font-weight: 700;
-  margin: 0 0 8px;
-}
-#vgee-programs .vgee-btnRow {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-#vgee-programs .vgee-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-family: var(--vgee-font-sans);
-  font-weight: 700;
-  border: 1px solid rgba(0,0,0,0.25);
-}
-#vgee-programs .vgee-btn--primary {
-  background: var(--vgee-accent);
-  color: #fff;
-  border-color: var(--vgee-accent);
-}
-#vgee-programs .vgee-btn--ghost {
-  background: #fff;
-  color: var(--vgee-accent);
-  border-color: rgba(31,95,191,0.45);
-}
+/* 8) Mobile */
+@media (max-width: 900px){
+  .why-vgee.vgee-programs-section{
+    padding: 40px 0;
+  }
 
-/* Responsive */
-@media (max-width: 900px) {
-  #vgee-programs .vgee-row--2,
-  #vgee-programs .vgee-programBlock {
+  .why-vgee.vgee-programs-section .why-row,
+  .why-vgee.vgee-programs-section .why-row--reverse{
     grid-template-columns: 1fr;
   }
-  #vgee-programs .vgee-row--2 .vgee-cell:first-child,
-  #vgee-programs .vgee-programBlock__left {
-    border-right: none;
-    border-bottom: 1px solid var(--vgee-line);
-  }
-  #vgee-programs .vgee-countryGrid { grid-template-columns: 1fr; }
-  #vgee-programs .vgee-countryCard {
-    border-right: none;
-    border-bottom: 1px solid var(--vgee-line);
-  }
-  #vgee-programs .vgee-countryCard:last-child { border-bottom: none; }
+  .why-vgee.vgee-programs-section .why-row--reverse .why-media{ order: 0; }
+  .why-vgee.vgee-programs-section .why-row--reverse .why-content{ order: 0; }
 }

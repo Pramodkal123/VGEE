@@ -2313,3 +2313,197 @@ footer a:hover{ color:#fff; }
 }
 
 
+
+
+/* =========================================================
+   Country Tile Component (Reusable)
+   - Centered responsive wrap (3+2 centered on desktop)
+   - Whole tile clickable
+   - Glassy hover feel
+   ========================================================= */
+
+.country-grid {
+  /* flex wrap centers the last row automatically */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* Each tile keeps a nice consistent width on desktop,
+   and naturally becomes 1 column on mobile */
+.country-tile {
+  width: 100%;
+  max-width: 360px;     /* controls tile width on desktop */
+  flex: 1 1 300px;      /* responsive basis */
+}
+
+/* Whole tile clickable */
+.country-tile__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  /* glass base */
+  background: rgba(15, 23, 42, 0.30);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transform: translateY(0);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+/* Image area */
+.country-tile__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: rgba(2, 6, 23, 0.35);
+}
+
+.country-tile__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Subtle top highlight */
+.country-tile__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.00) 45%, rgba(0,0,0,0.22));
+  pointer-events: none;
+}
+
+/* Body */
+.country-tile__body {
+  padding: 16px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.country-tile__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: rgba(241, 245, 249, 0.95);
+}
+
+/* Content text */
+.country-tile__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(226, 232, 240, 0.78);
+}
+
+/* Optional “link label” row (still whole card clickable) */
+.country-tile__cta {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(226, 232, 240, 0.90);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.95;
+}
+
+.country-tile__cta span {
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform .18s ease;
+}
+
+/* Hover glassy effect */
+.country-tile__link:hover {
+  transform: translateY(-4px);
+  background: rgba(30, 41, 59, 0.28);
+  border-color: rgba(56, 189, 248, 0.28);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.country-tile__link:hover .country-tile__cta span {
+  transform: translateX(4px);
+}
+
+/* Keyboard accessibility */
+.country-tile__link:focus-visible {
+  outline: 2px solid rgba(56, 189, 248, 0.75);
+  outline-offset: 3px;
+}
+
+/* Mobile: force single column feel */
+@media (max-width: 640px) {
+  .country-grid {
+    gap: 14px;
+  }
+  .country-tile {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+
+
+/* =========================================================
+   SPACING NORMALIZER (DROP-IN)
+   Paste at VERY BOTTOM of style.css
+   Goal: consistent vertical rhythm across sections/cards
+   ========================================================= */
+
+:root{
+  --sectionY: 64px;     /* default section padding */
+  --sectionY-md: 52px;  /* slightly tighter */
+  --sectionY-sm: 40px;  /* mobile */
+  --blockGap: 18px;     /* consistent inner spacing */
+}
+
+/* 1) Remove mixed spacing sources */
+section{ padding: 28; }                 /* kill global 28px */
+.why-vgee{ padding:10; }               /* kill 34px 0 10px */
+.vgee-programs-section{ padding: 0; }  /* kill 64px */
+
+/* 2) Apply ONE consistent system */
+main section{
+  padding: var(--sectionY) 0;
+}
+
+/* 3) Keep hero as-is (no extra section padding) */
+main section.bridge-hero{
+  padding: 0 !important;
+}
+
+/* 4) Consistent spacing below section titles */
+.why-head{
+  margin-bottom: var(--blockGap);
+}
+
+/* 5) Consistent spacing between blocks inside a section */
+.vgee-panel--padded{
+  margin-top: var(--blockGap);
+}
+
+.vgee-country-grid,
+.vgee-programs-kpis{
+  margin-top: var(--blockGap);
+}
+
+/* 6) Mobile tightening */
+@media (max-width: 900px){
+  main section{ padding: var(--sectionY-md) 0; }
+}
+@media (max-width: 600px){
+  main section{ padding: var(--sectionY-sm) 0; }
+}
