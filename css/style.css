@@ -1879,44 +1879,39 @@ footer a:hover{ color:#fff; }
 
 
 
-
 /* =========================================================
-   VIDEO HERO (FULL BLEED) — Drop-in replacement
-   Replaces: .bridge-hero-full styles
+   VIDEO HERO (FULL BLEED) — Vertically centered (NO width side-effects)
    ========================================================= */
+
 .bridge-hero{
   position: relative;
   width: 100%;
-  min-height: 560px;
-  height: auto;                          /* was calc(100vh - 74px) */
-  min-height: calc(100vh - 74px);        /* keeps the premium tall hero */
+  min-height: calc(100vh - 74px);
   overflow: hidden;
   background: #020617;
 }
 
-
-/* On small screens, don't subtract header (keeps things simple) */
+/* On small screens, don't subtract header */
 @media (max-width: 900px){
   .bridge-hero{
-    height: 82vh;
-    min-height: 520px;
+    min-height: 82vh;
   }
 }
 
-/* Background video */
+/* Background image/video */
 .bridge-hero__bg{
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* IMPORTANT */
+  object-fit: cover;
   object-position: center;
   display: block;
   filter: saturate(1.05) contrast(1.08);
-  transform: scale(1.02); /* tiny scale to avoid edge seams */
+  transform: scale(1.02);
 }
 
-/* Fallback image (only visible if video doesn't load) */
+/* Fallback image */
 .bridge-hero__fallback{
   position: absolute;
   inset: 0;
@@ -1924,16 +1919,11 @@ footer a:hover{ color:#fff; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: none;
-}
-
-/* If you want fallback always behind, keep it block but lower opacity */
-.bridge-hero__fallback{
   display: block;
-  opacity: 0.0; /* keep hidden by default */
+  opacity: 0; /* hidden by default */
 }
 
-/* Overlay to match your site mood + readability */
+/* Overlay */
 .bridge-hero__overlay{
   position: absolute;
   inset: 0;
@@ -1945,23 +1935,33 @@ footer a:hover{ color:#fff; }
     linear-gradient(180deg, rgba(2,6,23,.25), rgba(2,6,23,.65) 60%, rgba(2,6,23,.92));
 }
 
-/* Content width wrapper */
+/* Content wrapper (keeps same width rules as before) */
 .bridge-hero__inner{
   position: relative;
   z-index: 2;
-  height: 100%;
-  max-width: var(--maxw);         /* keep aligned with .container sections */
+
+  max-width: var(--maxw);     /* stays aligned with your site container */
   margin: 0 auto;
   padding: 42px 20px;
 
+  /* 🔥 The key: give the inner wrapper real height & center grid content */
+  min-height: calc(100vh - 74px);
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;  /* was 1.15fr 0.85fr */
+  grid-template-columns: 1.35fr 0.65fr;
   gap: 24px;
-  align-items: center;
+
+  align-content: center;      /* 🔥 vertical centering without stretching width */
+  align-items: center;        /* vertical alignment inside each column */
 }
 
+/* Left side (optional, but helps if content grows) */
+.bridge-hero__left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-/* Left side */
+/* Kicker (if used) */
 .bridge-hero__kicker{
   margin: 0 0 12px;
   display: inline-flex;
@@ -2041,7 +2041,8 @@ footer a:hover{ color:#fff; }
 }
 
 .bridge-hero__logo{
-  width: min(420px, 90%);
+  width: min(280px, 68%);
+  max-width: 300px;
   height: auto;
   display: block;
   filter: drop-shadow(0 22px 70px rgba(0,0,0,.55));
@@ -2049,64 +2050,22 @@ footer a:hover{ color:#fff; }
 }
 
 /* Responsive */
-@media (max-width: 980px){
-  .bridge-hero__inner{
-    grid-template-columns: 1fr;
-    align-items: start;
-    padding: 34px 18px;
-  }
-
-  .bridge-hero__right{
-    justify-content: flex-start;
-    margin-top: 18px;
-  }
-
-  .bridge-hero__logo{
-    width: min(360px, 92%);
-  }
-}
-
-
-
-/* =========================================================
-   VIDEO HERO RESPONSIVE TWEAKS
-   - Desktop: logo ~75%
-   - Tablet: logo ~50-55%, smaller text
-   - Mobile: hide logo, center text
-   ========================================================= */
-
-/* Desktop logo sizing (default) */
-.bridge-hero__logo{
-  width: min(280px, 68%); /* slightly smaller */
-  max-width: 300px;       /* slightly smaller cap */
-
-
-}
-
-/* Slightly reduce title on smaller desktops */
 @media (max-width: 1200px){
   .bridge-hero__title{
     font-size: clamp(2.0rem, 3.6vw, 3.0rem);
   }
   .bridge-hero__logo{
-  width: min(280px, 64%);
-  max-width: 300px;
-}
-
-}
-
-/* Tablet / iPad */
-@media (max-width: 980px){
-  .bridge-hero{
-    height: 78vh;
-    min-height: 520px;
+    width: min(280px, 64%);
+    max-width: 300px;
   }
+}
 
+@media (max-width: 980px){
   .bridge-hero__inner{
-    grid-template-columns: 1fr 0.9fr; /* keep 2 cols but tighter */
-    align-items: center;
+    grid-template-columns: 1fr 0.9fr;
     gap: 18px;
     padding: 34px 18px;
+    min-height: 78vh;          /* keep same feel as your original tablet rule */
   }
 
   .bridge-hero__title{
@@ -2120,23 +2079,17 @@ footer a:hover{ color:#fff; }
   }
 
   .bridge-hero__logo{
-    width: min(220px, 55%); /* ~50-55% look */
+    width: min(220px, 55%);
     max-width: 240px;
   }
 }
 
-/* Mobile: hide logo + center text */
 @media (max-width: 500px){
-  .bridge-hero{
-    height: 84vh;
-    min-height: 520px;
-  }
-
   .bridge-hero__inner{
-    grid-template-columns: 1fr; /* single column */
+    grid-template-columns: 1fr;
     text-align: center;
     padding: 30px 16px;
-    align-items: center;
+    min-height: 84vh;         /* matches your original mobile feel */
   }
 
   .bridge-hero__kicker{
@@ -2154,11 +2107,10 @@ footer a:hover{ color:#fff; }
   }
 
   .bridge-hero__right{
-    display: none; /* hide logo entirely on mobile */
+    display: none;
   }
 }
 
-/* Extra-small phones */
 @media (max-width: 420px){
   .bridge-hero__title{
     font-size: 1.65rem;
@@ -2174,23 +2126,17 @@ footer a:hover{ color:#fff; }
   }
 }
 
-
-/* iPad/tablet portrait: stop hero being too tall */
+/* iPad/tablet portrait caps */
 @media (max-width: 1024px) and (min-width: 701px){
-  .bridge-hero{
-    height: min(78vh, 640px);   /* cap */
-    min-height: 560px;         /* keeps it premium */
+  .bridge-hero__inner{
+    min-height: min(78vh, 640px);
   }
 }
-
-/* if you want iPad Mini even shorter */
 @media (max-width: 820px) and (min-width: 701px){
-  .bridge-hero{
-    height: min(72vh, 600px);
-    min-height: 520px;
+  .bridge-hero__inner{
+    min-height: min(72vh, 600px);
   }
 }
-
 
 
 
@@ -2313,17 +2259,15 @@ footer a:hover{ color:#fff; }
 }
 
 
-
-
 /* =========================================================
    Country Tile Component (Reusable)
    - Centered responsive wrap (3+2 centered on desktop)
    - Whole tile clickable
-   - Glassy hover feel
+   - Fixed image area (consistent height)
+   - Glass hover feel
    ========================================================= */
 
 .country-grid {
-  /* flex wrap centers the last row automatically */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -2331,12 +2275,11 @@ footer a:hover{ color:#fff; }
   margin-top: 18px;
 }
 
-/* Each tile keeps a nice consistent width on desktop,
-   and naturally becomes 1 column on mobile */
+/* Tile sizing */
 .country-tile {
   width: 100%;
-  max-width: 360px;     /* controls tile width on desktop */
-  flex: 1 1 300px;      /* responsive basis */
+  max-width: 360px;
+  flex: 1 1 300px;
 }
 
 /* Whole tile clickable */
@@ -2358,33 +2301,62 @@ footer a:hover{ color:#fff; }
   -webkit-backdrop-filter: blur(10px);
 
   transform: translateY(0);
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    background .18s ease;
 }
 
-/* Image area */
+
+/* =========================================================
+   FIXED MEDIA BOX
+   ========================================================= */
+
 .country-tile__media {
   position: relative;
-  aspect-ratio: 16 / 10;
+
+  /* Fixed consistent height */
+  height: clamp(170px, 20vw, 210px);
+
+  display: grid;
+  place-items: center;
+
   background: rgba(2, 6, 23, 0.35);
+  overflow: hidden;
 }
 
 .country-tile__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
+  object-fit: contain;      /* shows full image */
+  object-position: center;
+
+  padding: 14px;            /* breathing space */
+
   display: block;
 }
 
-/* Subtle top highlight */
+/* Subtle overlay highlight */
 .country-tile__media::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.00) 45%, rgba(0,0,0,0.22));
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.06),
+    rgba(0,0,0,0.00) 45%,
+    rgba(0,0,0,0.22)
+  );
   pointer-events: none;
 }
 
-/* Body */
+
+/* =========================================================
+   Body
+   ========================================================= */
+
 .country-tile__body {
   padding: 16px 16px 14px;
   display: flex;
@@ -2400,7 +2372,6 @@ footer a:hover{ color:#fff; }
   color: rgba(241, 245, 249, 0.95);
 }
 
-/* Content text */
 .country-tile__text {
   margin: 0;
   font-size: 14px;
@@ -2408,7 +2379,6 @@ footer a:hover{ color:#fff; }
   color: rgba(226, 232, 240, 0.78);
 }
 
-/* Optional “link label” row (still whole card clickable) */
 .country-tile__cta {
   margin-top: 8px;
   font-size: 14px;
@@ -2426,7 +2396,11 @@ footer a:hover{ color:#fff; }
   transition: transform .18s ease;
 }
 
-/* Hover glassy effect */
+
+/* =========================================================
+   Hover Effects
+   ========================================================= */
+
 .country-tile__link:hover {
   transform: translateY(-4px);
   background: rgba(30, 41, 59, 0.28);
@@ -2438,72 +2412,188 @@ footer a:hover{ color:#fff; }
   transform: translateX(4px);
 }
 
-/* Keyboard accessibility */
+/* Accessibility */
 .country-tile__link:focus-visible {
   outline: 2px solid rgba(56, 189, 248, 0.75);
   outline-offset: 3px;
 }
 
-/* Mobile: force single column feel */
+
+/* =========================================================
+   Mobile adjustments
+   ========================================================= */
+
 @media (max-width: 640px) {
   .country-grid {
     gap: 14px;
   }
+
   .country-tile {
     max-width: 100%;
     flex-basis: 100%;
+  }
+
+  .country-tile__media {
+    height: 180px;
   }
 }
 
 
 
 /* =========================================================
-   SPACING NORMALIZER (DROP-IN)
-   Paste at VERY BOTTOM of style.css
-   Goal: consistent vertical rhythm across sections/cards
+   SPACING NORMALIZER
+   Consistent vertical rhythm
    ========================================================= */
 
 :root{
-  --sectionY: 64px;     /* default section padding */
-  --sectionY-md: 52px;  /* slightly tighter */
-  --sectionY-sm: 40px;  /* mobile */
-  --blockGap: 18px;     /* consistent inner spacing */
+  --sectionY: 64px;
+  --sectionY-md: 52px;
+  --sectionY-sm: 40px;
+  --blockGap: 18px;
 }
 
-/* 1) Remove mixed spacing sources */
-section{ padding: 28; }                 /* kill global 28px */
-.why-vgee{ padding:10; }               /* kill 34px 0 10px */
-.vgee-programs-section{ padding: 0; }  /* kill 64px */
+/* Reset mixed spacing */
+section { padding: 0; }
+.why-vgee { padding: 0; }
+.vgee-programs-section { padding: 0; }
 
-/* 2) Apply ONE consistent system */
-main section{
+/* Apply consistent spacing */
+main section {
   padding: var(--sectionY) 0;
 }
 
-/* 3) Keep hero as-is (no extra section padding) */
-main section.bridge-hero{
+/* Keep hero untouched */
+main section.bridge-hero {
   padding: 0 !important;
 }
 
-/* 4) Consistent spacing below section titles */
-.why-head{
+/* Title spacing */
+.why-head {
   margin-bottom: var(--blockGap);
 }
 
-/* 5) Consistent spacing between blocks inside a section */
-.vgee-panel--padded{
-  margin-top: var(--blockGap);
-}
-
+/* Internal spacing consistency */
+.vgee-panel--padded,
 .vgee-country-grid,
-.vgee-programs-kpis{
+.vgee-programs-kpis {
   margin-top: var(--blockGap);
 }
 
-/* 6) Mobile tightening */
+/* Responsive tightening */
 @media (max-width: 900px){
-  main section{ padding: var(--sectionY-md) 0; }
+  main section { padding: var(--sectionY-md) 0; }
 }
+
 @media (max-width: 600px){
-  main section{ padding: var(--sectionY-sm) 0; }
+  main section { padding: var(--sectionY-sm) 0; }
+}
+
+
+
+
+
+/* ===== Premium Brass Gold Branding (with wrap constraint) ===== */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+/* Text container: width constraint + right padding so it won't overlap menu/IT */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+
+  max-width: 380px;     /* controls where subtitle wraps */
+  padding-right: 28px;  /* breathing space before IT + hamburger */
+  min-width: 0;         /* IMPORTANT: allows flex child to shrink & wrap */
+}
+
+/* Main VGEE - Brass Tone (your updated colors preserved) */
+.brand-title {
+  font-family: 'Roboto', 'Times New Roman', serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 1.5px;
+
+  background: linear-gradient(
+    120deg,
+    #ffffff 0%,
+    #ffe5a8 20%,
+    #ffe7a3 40%,
+    #ffe8b1 60%,
+    #f9e3b4 80%
+  );
+
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow:
+    0 2px 4px rgba(0,0,0,0.45),
+    0 0 6px rgba(176,141,58,0.25);
+
+  animation: brassShine 6s linear infinite;
+}
+
+/* Subtitle - Softer Brass (your updated colors preserved) */
+.brand-sub {
+  font-family: 'Roboto', 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #c4a14a,
+    #ffefce
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  opacity: 0.95;
+
+  /* Wrap control */
+  white-space: normal;     /* allow wrapping */
+  overflow-wrap: anywhere; /* prevents overflow in tight widths */
+}
+
+/* Subtle Moving Shine */
+@keyframes brassShine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+
+
+/* Stop kicker pill stretching full width inside the flex column */
+.bridge-hero__kicker{
+  align-self: flex-start;  /* key fix */
+  width: fit-content;      /* ensures it wraps content only */
+  max-width: 100%;
+}
+
+/* If you want ALL left content to not stretch (recommended) */
+.bridge-hero__left{
+  align-items: flex-start; /* prevents stretching of children */
+}
+
+/* Keep your mobile centered layout */
+@media (max-width: 500px){
+  .bridge-hero__left{
+    align-items: center;
+  }
+  .bridge-hero__kicker{
+    align-self: center;
+  }
 }
