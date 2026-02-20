@@ -66,12 +66,12 @@
       </div>
       <nav style="margin-top:12px">
         <ul style="list-style:none;padding-left:0">
-          <li style="padding:8px 0"><a href="index.html">Home</a></li>
-          <li style="padding:8px 0"><a href="programs.html">Programs</a></li>
-          <li style="padding:8px 0"><a href="training.html">Training</a></li>
-          <li style="padding:8px 0"><a href="internships.html">Internships</a></li>
+          <li style="padding:0px 0"><a href="index.html">Home</a></li>
+          <li style="padding:0px 0"><a href="programs.html">Programs</a></li>
+          <li style="padding:0px 0"><a href="training.html">Training</a></li>
+          <li style="padding:0px 0"><a href="internships.html">Internships</a></li>
          <!-- <li style="padding:8px 0"><a href="services.html">Italy Services</a></li>-->
-          <li style="padding:8px 0"><a href="about.html">About</a></li>
+          <li style="padding:0px 0"><a href="about.html">About</a></li>
           <!--<li style="padding:8px 0"><a href="blog.html">Blog</a></li> -->
           <li style="padding:8px 0"><a href="contact.html">Contact</a></li>
         </ul>
@@ -82,14 +82,11 @@
 
 
 
-
-
 <!-- FULL-BLEED VIDEO HERO -->
 <section class="bridge-hero" id="bridge-hero" aria-label="VGEE hero">
   <!-- Ambient background video -->
   <video class="bridge-hero__bg" autoplay muted loop playsinline preload="metadata">
-    <source src="assets/videos/hero-video.mp4" type="video/mp4"/>
-    <!-- fallback image if video can't load -->
+    <source src="assets/videos/hero-video.mp4" type="video/mp4" />
   </video>
 
   <!-- Optional fallback poster image layer (shows if video fails) -->
@@ -104,17 +101,19 @@
   <!-- Overlays -->
   <div class="bridge-hero__overlay" aria-hidden="true"></div>
 
-  <!-- Content wrapper (keeps nice max width like Elementor) -->
+  <!-- Content wrapper -->
   <div class="bridge-hero__inner">
     <!-- Left text -->
     <div class="bridge-hero__left">
       <p class="bridge-hero__kicker">EDUCATION • TRAINING • INTERNSHIPS</p>
 
       <h1 class="bridge-hero__title">
-     Supporting Non-European Learners Through European Education, Training & Structured Practical Experience</h1>
+        Supporting Non-European Learners Through European Education, Training &amp; Structured Practical Experience
+      </h1>
 
       <p class="bridge-hero__lead">
-        A VGEE initiative designed to support structured learning, skills development, and transition readiness through ethical, transparent pathways aligned with European education and training frameworks.
+        A VGEE initiative designed to support structured learning, skills development, and transition readiness through
+        ethical, transparent pathways aligned with European education and training frameworks.
       </p>
 
       <div class="bridge-hero__cta">
@@ -123,21 +122,57 @@
       </div>
     </div>
 
-    <div class="bridge-hero__right" aria-label="VGEE animated logo">
-  <img
-  src="assets/icons/logo.png"
-  alt="Company Logo"
-  class="bridge-hero__logo"
-  loading="lazy"
-/>
+    <!-- Right: Scoped vertical glass cards (no shared class overrides) -->
+    <div class="bridge-hero__right" aria-label="VGEE highlights">
+      <div class="vgee-heroCards" role="list">
+        <!-- Card 1 -->
+        <div class="vgee-heroCard" role="listitem">
+          <div class="vgee-heroCard__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M12 2l7 4v6c0 5-3 9-7 10C8 21 5 17 5 12V6l7-4z" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M9.2 12.2l1.8 1.8 3.9-4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="vgee-heroCard__text">
+            <div class="vgee-heroCard__title">Reliable</div>
+            <div class="vgee-heroCard__desc">Guided steps you can trust from enrolment to placement.</div>
+          </div>
+        </div>
 
-</div>
+        <!-- Card 2 -->
+        <div class="vgee-heroCard" role="listitem">
+          <div class="vgee-heroCard__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M6 6c3 0 3 4 6 4s3-4 6-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M6 18c3 0 3-4 6-4s3 4 6 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M6 6v12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M18 6v12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="vgee-heroCard__text">
+            <div class="vgee-heroCard__title">Transparent Pathways</div>
+            <div class="vgee-heroCard__desc">Clear requirements, ethical processes, and aligned frameworks.</div>
+          </div>
+        </div>
 
+        <!-- Card 3 -->
+        <div class="vgee-heroCard" role="listitem">
+          <div class="vgee-heroCard__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M12 3l10 5-10 5L2 8l10-5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              <path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M22 8v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="vgee-heroCard__text">
+            <div class="vgee-heroCard__title">Structured Support</div>
+            <div class="vgee-heroCard__desc">Training + practical experience designed for real outcomes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-
-
 
 
 
