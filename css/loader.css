@@ -1,0 +1,115 @@
+/* =========================
+   Global Page Loader
+   ========================= */
+
+:root {
+  --loader-bg: #000235;
+  --loader-ring: #ffffff; /* adjust to brand color if needed */
+  --loader-ring-soft: rgba(27, 54, 93, 0.14);
+  --loader-logo-size: 92px;
+  --loader-ring-size: 132px;
+  --loader-ring-width: 3px;
+  --loader-z: 99999;
+  --loader-fade-duration: 0.45s;
+}
+
+html.is-loading,
+body.is-loading {
+  overflow: hidden;
+}
+
+#site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--loader-z);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--loader-bg);
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--loader-fade-duration) ease,
+    visibility var(--loader-fade-duration) ease;
+}
+
+#site-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-loader__inner {
+  position: relative;
+  width: var(--loader-ring-size);
+  height: var(--loader-ring-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-loader__logo-wrap {
+  width: var(--loader-logo-size);
+  height: var(--loader-logo-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: transparent;
+  z-index: 2;
+}
+
+.site-loader__logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.site-loader__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: var(--loader-ring-width) solid var(--loader-ring-soft);
+  border-top-color: var(--loader-ring);
+  animation: siteLoaderSpin 0.95s linear infinite;
+  z-index: 1;
+}
+
+@keyframes siteLoaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optional subtle logo fade-in */
+.site-loader__logo {
+  animation: siteLoaderLogoIn 0.45s ease;
+}
+
+@keyframes siteLoaderLogoIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #site-loader,
+  .site-loader__logo {
+    transition: none;
+    animation: none;
+  }
+
+  .site-loader__ring {
+    animation-duration: 1.8s;
+  }
+}
