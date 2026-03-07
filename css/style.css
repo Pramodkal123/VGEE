@@ -125,7 +125,7 @@ header{
 }
 .brand *{ color:inherit; }
 .brand:hover{ opacity:.95; }
-.brand img{ height:44px; }
+.brand img{ height:66px; }
 .brand div{ line-height:1.1; }
 .brand small.small{
   font-size: 0.85rem;          /* was 0.75rem */
@@ -2602,7 +2602,7 @@ main section.bridge-hero {
 .brand-sub {
   font-family: 'Roboto', 'Times New Roman', serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.5px;
 
   background: linear-gradient(
