@@ -3,18 +3,24 @@
   const HIDDEN_CLASS = "is-hidden";
   const ROOT_LOADING_CLASS = "is-loading";
 
-  // Change this if you ever want to use the PNG instead
   const LOGO_SRC = "assets/icons/logo.svg";
   const LOGO_ALT = "VGEE";
 
-  // Fallback so loader never gets stuck forever
-  const FAILSAFE_MS = 3500;
-  const REMOVE_DELAY_MS = 450;
+  // Loader timing
+  const MIN_DISPLAY_MS = 2000;   // keep loader visible at least 2 seconds
+  const FAILSAFE_MS = 6000;      // hard fallback
+  const REMOVE_DELAY_MS = 450;   // should match CSS fade duration
 
-  // Mark page as loading as early as possible
+  let pageLoaded = false;
+  let minTimeElapsed = false;
+  let heroReady = false;
+  let loaderHidden = false;
+
   document.documentElement.classList.add(ROOT_LOADING_CLASS);
   document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add(ROOT_LOADING_CLASS);
+    if (document.body) {
+      document.body.classList.add(ROOT_LOADING_CLASS);
+    }
   });
 
   function createLoader() {
@@ -34,8 +40,9 @@
     `;
 
     const mount = () => {
-      if (!document.body) return;
-      document.body.prepend(loader);
+      if (document.body) {
+        document.body.prepend(loader);
+      }
     };
 
     if (document.body) {
@@ -45,24 +52,103 @@
     }
   }
 
-  function hideLoader() {
-    const loader = document.getElementById(LOADER_ID);
-    if (!loader || loader.dataset.hidden === "true") return;
-
-    loader.dataset.hidden = "true";
-    loader.classList.add(HIDDEN_CLASS);
-
+  function cleanupLoadingState() {
     document.documentElement.classList.remove(ROOT_LOADING_CLASS);
-    document.body && document.body.classList.remove(ROOT_LOADING_CLASS);
+    if (document.body) {
+      document.body.classList.remove(ROOT_LOADING_CLASS);
+    }
+  }
+
+  function hideLoader() {
+    if (loaderHidden) return;
+
+    const loader = document.getElementById(LOADER_ID);
+    if (!loader) {
+      cleanupLoadingState();
+      loaderHidden = true;
+      return;
+    }
+
+    loaderHidden = true;
+    loader.classList.add(HIDDEN_CLASS);
+    cleanupLoadingState();
 
     window.setTimeout(() => {
       loader.remove();
     }, REMOVE_DELAY_MS);
   }
 
+  function tryHideLoader() {
+    if (pageLoaded && minTimeElapsed && heroReady) {
+      hideLoader();
+    }
+  }
+
+  function markHeroReady() {
+    heroReady = true;
+    tryHideLoader();
+  }
+
+  function waitForHeroAssets() {
+    const heroVideo = document.querySelector(".bridge-hero__bg");
+    const heroFallback = document.querySelector(".bridge-hero__fallback");
+
+    // If hero video exists, consider it ready when it has enough data to render first frame
+    if (heroVideo) {
+      if (heroVideo.readyState >= 2) {
+        markHeroReady();
+        return;
+      }
+
+      const onVideoReady = () => {
+        heroVideo.removeEventListener("loadeddata", onVideoReady);
+        heroVideo.removeEventListener("canplay", onVideoReady);
+        markHeroReady();
+      };
+
+      heroVideo.addEventListener("loadeddata", onVideoReady, { once: true });
+      heroVideo.addEventListener("canplay", onVideoReady, { once: true });
+
+      // backup in case browser behaves differently
+      window.setTimeout(markHeroReady, 2500);
+      return;
+    }
+
+    // If fallback hero image exists
+    if (heroFallback) {
+      if (heroFallback.complete) {
+        markHeroReady();
+        return;
+      }
+
+      heroFallback.addEventListener("load", markHeroReady, { once: true });
+      heroFallback.addEventListener("error", markHeroReady, { once: true });
+
+      window.setTimeout(markHeroReady, 2000);
+      return;
+    }
+
+    // No hero asset to wait for
+    markHeroReady();
+  }
+
   createLoader();
+  waitForHeroAssets();
 
-  window.addEventListener("load", hideLoader);
+  // Minimum display time
+  window.setTimeout(() => {
+    minTimeElapsed = true;
+    tryHideLoader();
+  }, MIN_DISPLAY_MS);
 
-  window.setTimeout(hideLoader, FAILSAFE_MS);
+  // Full page load
+  window.addEventListener("load", () => {
+    pageLoaded = true;
+    tryHideLoader();
+  });
+
+  // Failsafe
+  window.setTimeout(() => {
+    hideLoader();
+  }, FAILSAFE_MS);
 })();
